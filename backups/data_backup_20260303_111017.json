@@ -1,0 +1,2252 @@
+[
+  {
+    "id": "131862",
+    "name": "PHONG THẦN TA ĐỊNH ĐOẠT",
+    "company": "CÔNG TY CỔ PHẦN GIẢI TRÍ 568E",
+    "license": "107/QĐ-PTTH&TTĐT",
+    "domain": "https://phongthantdd.vn và https://phongthantdd.568play.vn",
+    "status": "Đang hoạt động",
+    "date": "02/03/2026"
+  },
+  {
+    "id": "131859",
+    "name": "HOÀN MỸ TAM QUỐC.",
+    "company": "CÔNG TY CỔ PHẦN VGP",
+    "license": "91/QĐ-PTTH&TTĐT",
+    "domain": "https://hoanmytamquoc.vgplay.vn/",
+    "status": "Đang hoạt động",
+    "date": "13/02/2026"
+  },
+  {
+    "id": "131854",
+    "name": "WOWS: LÀNG HIỆP SĨ",
+    "company": "CÔNG TY CỔ PHẦN VTC DỊCH VỤ DI ĐỘNG -",
+    "license": "92/QĐ-PTTH&TTĐT",
+    "domain": "https://wows.splay.vn",
+    "status": "Đang hoạt động",
+    "date": "13/02/2026"
+  },
+  {
+    "id": "131853",
+    "name": "GIANG HỒ NGŨ TUYỆT",
+    "company": "CÔNG TY CỔ PHẦN VTC DỊCH VỤ DI ĐỘNG -",
+    "license": "93/QĐ-PTTH&TTĐT",
+    "domain": "https://ghnt.vn",
+    "status": "Đang hoạt động",
+    "date": "13/02/2026"
+  },
+  {
+    "id": "131852",
+    "name": "AU MOBILE",
+    "company": "CÔNG TY CỔ PHẦN VTC DỊCH VỤ DI ĐỘNG",
+    "license": "78/QĐ-PTTH&TTĐT",
+    "domain": "https://aumobile.vn",
+    "status": "Đang hoạt động",
+    "date": "12/02/2026"
+  },
+  {
+    "id": "131828",
+    "name": "HONKAI: NEXUS ANIMA - TINH LINH GIAO THOA",
+    "company": "CÔNG TY CỔ PHẦN GAMOTA",
+    "license": "71/QĐ-PTTH&TTĐT",
+    "domain": "https://hna.gamota.com",
+    "status": "Đang hoạt động",
+    "date": "11/02/2026"
+  },
+  {
+    "id": "131817",
+    "name": "TÂN THIÊN LONG MOBILE",
+    "company": "CÔNG TY CỔ PHẦN TẬP ĐOÀN VNG",
+    "license": "64/QĐ-PTTH&TTĐT",
+    "domain": "https://ttlm.zing.vn",
+    "status": "Đang hoạt động",
+    "date": "10/02/2026"
+  },
+  {
+    "id": "131833",
+    "name": "VẤN ĐỈNH TAM QUỐC",
+    "company": "CÔNG TY TNHH SOHA",
+    "license": "67/QĐ-PTTH&TTĐT",
+    "domain": "https://vandinhtamquoc.sohagame.vn/",
+    "status": "Đang hoạt động",
+    "date": "10/02/2026"
+  },
+  {
+    "id": "131819",
+    "name": "KIẾM THÁNH ORIGIN",
+    "company": "CÔNG TY CỔ PHẦN TRỰC TUYẾN CMN VIỆT NAM",
+    "license": "65/QĐ-PTTH&TTĐT",
+    "domain": "http://kiemthanh.vn",
+    "status": "Đang hoạt động",
+    "date": "10/02/2026"
+  },
+  {
+    "id": "131846",
+    "name": "THẦN MA ARENA",
+    "company": "CÔNG TY CỔ PHẦN TRỰC TUYẾN CMN VIỆT NAM",
+    "license": "61/QĐ-PTTH&TTĐT",
+    "domain": "https://thanmaarenacmn.vn/",
+    "status": "Đang hoạt động",
+    "date": "09/02/2026"
+  },
+  {
+    "id": "131825",
+    "name": "NỮ THẦN SÂN KHẤU",
+    "company": "CÔNG TY CỔ PHẦN 9PLAY",
+    "license": "52/QĐ-PTTH&TTĐT",
+    "domain": "https://apexgirl.vn/",
+    "status": "Đang hoạt động",
+    "date": "06/02/2026"
+  },
+  {
+    "id": "131816",
+    "name": "SHINKAI ĐẠI CHIẾN: KHỞI NGUYÊN",
+    "company": "CÔNG TY TNHH SOHA",
+    "license": "58/QĐ-PTTH&TTĐT",
+    "domain": "https://khoinguyen.sohagame.vn",
+    "status": "Đang hoạt động",
+    "date": "06/02/2026"
+  },
+  {
+    "id": "131815",
+    "name": "HÀO KHÍ DU HIỆP",
+    "company": "CÔNG TY CỔ PHẦN DỊCH VỤ TRỰC TUYẾN MIGA",
+    "license": "55/QĐ-PTTH&TTĐT",
+    "domain": "http://haokhiduhiep.vn",
+    "status": "Đang hoạt động",
+    "date": "06/02/2026"
+  },
+  {
+    "id": "131842",
+    "name": "CHỦ CÔNG CHẠY ĐI",
+    "company": "CÔNG TY CỔ PHẦN TRỰC TUYẾN CMN VIỆT NAM",
+    "license": "57/QĐ-PTTH&TTĐT",
+    "domain": "https://chucongchaydi.cmn.vn và chucongchaydi.vn",
+    "status": "Đang hoạt động",
+    "date": "06/02/2026"
+  },
+  {
+    "id": "131821",
+    "name": "BANG BANG ĐẠI CHIẾN",
+    "company": "CÔNG TY CỔ PHẦN PHÁT TRIỂN CÔNG NGHỆ SỐ HỒNG HÀ",
+    "license": "49/QĐ-PTTH&TTĐT",
+    "domain": "http://bangbangwar.hhgame.vn/",
+    "status": "Đang hoạt động",
+    "date": "05/02/2026"
+  },
+  {
+    "id": "131824",
+    "name": "ĐANG TẠO TÔNG MÔN ĐỪNG LÀM PHIỀN",
+    "company": "CÔNG TY CỔ PHẦN FUNTAP",
+    "license": "50/QĐ-PTTH&TTĐT",
+    "domain": "http://www.tongmon.playfun.vn/",
+    "status": "Đang hoạt động",
+    "date": "05/02/2026"
+  },
+  {
+    "id": "131845",
+    "name": "TAM QUỐC 36 KẾ",
+    "company": "CÔNG TY CỔ PHẦN VTC DỊCH VỤ DI ĐỘNG",
+    "license": "48/QĐ-PTTH&TTĐT",
+    "domain": "https://tamquoc36ke.vn",
+    "status": "Đang hoạt động",
+    "date": "05/02/2026"
+  },
+  {
+    "id": "131834",
+    "name": "VŨ TRỤ ĐẠI CHIẾN",
+    "company": "CÔNG TY TNHH SKYMOBI",
+    "license": "47/QĐ-PTTH&TTĐT",
+    "domain": "http://vutrudaichien.com",
+    "status": "Đang hoạt động",
+    "date": "04/02/2026"
+  },
+  {
+    "id": "131823",
+    "name": "MẢNH ĐẤT SINH TỒN",
+    "company": "CÔNG TY CỔ PHẦN PHÁT TRIỂN CÔNG NGHỆ SỐ HỒNG HÀ",
+    "license": "46/QĐ-PTTH&TTĐT",
+    "domain": "http://mdst.hhgame.vn/",
+    "status": "Đang hoạt động",
+    "date": "04/02/2026"
+  },
+  {
+    "id": "131812",
+    "name": "VƯỢT TƯỜNG THÉP",
+    "company": "CÔNG TY CỔ PHẦN GIẢI TRÍ TRỰC TUYẾN KAN",
+    "license": "44/QĐ-PTTH&TTĐT",
+    "domain": "https://vuottuongthep.vn",
+    "status": "Đang hoạt động",
+    "date": "03/02/2026"
+  },
+  {
+    "id": "131848",
+    "name": "KIẾM VŨ SƠN HÀ",
+    "company": "Công ty Cổ phần Broga",
+    "license": "45/QĐ-PTTH&TTĐT",
+    "domain": "http://kvsh.broga.vn/",
+    "status": "Đang hoạt động",
+    "date": "03/02/2026"
+  },
+  {
+    "id": "131851",
+    "name": "SƠN HẢI DỊ THÚ TRUYỆN",
+    "company": "CÔNG TY CỔ PHẦN CÔNG NGHỆ SỐ ALO",
+    "license": "43/QĐ-PTTH&TTĐT",
+    "domain": "https://sonhaidithu.alogame.vn/",
+    "status": "Đang hoạt động",
+    "date": "03/02/2026"
+  },
+  {
+    "id": "131843",
+    "name": "HỒI ỨC KIẾM THẾ MOBILE",
+    "company": "CÔNG TY CỔ PHẦN GZONE MEDIA VIỆT NAM",
+    "license": "39/QĐ-PTTH&TTĐT",
+    "domain": "https://hoiuckt.zoneplay.vn",
+    "status": "Đang hoạt động",
+    "date": "30/01/2026"
+  },
+  {
+    "id": "131810",
+    "name": "BALLISTIC HERO VNG",
+    "company": "Công ty TNHH VNGGames",
+    "license": "32/QĐ-PTTH&TTĐT",
+    "domain": "https://ballisticvn.vnggames.com/",
+    "status": "Đang hoạt động",
+    "date": "30/01/2026"
+  },
+  {
+    "id": "131808",
+    "name": "PHONG THẦN VNG",
+    "company": "CÔNG TY CỔ PHẦN TẬP ĐOÀN VNG",
+    "license": "34/QĐ-PTTH&TTĐT",
+    "domain": "https://phongthan.vnggames.com",
+    "status": "Đang hoạt động",
+    "date": "30/01/2026"
+  },
+  {
+    "id": "131835",
+    "name": "QUÁI THÚ PHÒNG THỦ",
+    "company": "CÔNG TY CỔ PHẦN TẬP ĐOÀN GIẢI TRÍ ĐẠI DƯƠNG",
+    "license": "38/QĐ-PTTH&TTĐT",
+    "domain": "https://quaithu.oeg.vn/",
+    "status": "Đang hoạt động",
+    "date": "30/01/2026"
+  },
+  {
+    "id": "131829",
+    "name": "RAGNAROK TWILIGHT CHẠNG VẠNG",
+    "company": "CÔNG TY CỔ PHẦN GAMOTA",
+    "license": "36/QĐ-PTTH&TTĐT",
+    "domain": "https://rtcv.gamota.com",
+    "status": "Đang hoạt động",
+    "date": "30/01/2026"
+  },
+  {
+    "id": "131811",
+    "name": "TOP ELEVEN: QUẢN LÝ BÓNG ĐÁ",
+    "company": "CÔNG TY CỔ PHẦN TẬP ĐOÀN VNG",
+    "license": "35/QĐ-PTTH&TTĐT",
+    "domain": "https://topeleven.vnggames.com",
+    "status": "Đang hoạt động",
+    "date": "30/01/2026"
+  },
+  {
+    "id": "131803",
+    "name": "BỬU BỐI TRUYỀN KỲ",
+    "company": "CÔNG TY CỔ PHẦN TRỰC TUYẾN CMN VIỆT NAM",
+    "license": "37/QĐ-PTTH&TTĐT",
+    "domain": "http://buuboitruyenky.vn",
+    "status": "Đang hoạt động",
+    "date": "30/01/2026"
+  },
+  {
+    "id": "131796",
+    "name": "NGỌA LONG VNG",
+    "company": "CÔNG TY CỔ PHẦN TẬP ĐOÀN VNG",
+    "license": "30/QĐ-PTTH&TTĐT",
+    "domain": "https://ngoalong.vnggames.com",
+    "status": "Đang hoạt động",
+    "date": "27/01/2026"
+  },
+  {
+    "id": "131849",
+    "name": "PHI KIẾM TU TIÊN",
+    "company": "Công ty TNHH Velalive",
+    "license": "29/QĐ-PTTH&TTĐT",
+    "domain": "https://pktt.velalive.net.vn/",
+    "status": "Đang hoạt động",
+    "date": "23/01/2026"
+  },
+  {
+    "id": "131789",
+    "name": "VÕ LÂM TRUYỀN KỲ 1 MOBILE",
+    "company": "CÔNG TY CỔ PHẦN TẬP ĐOÀN VNG",
+    "license": "27 /QĐ-PTTH&TTĐT",
+    "domain": "https://volamm.vnggames.com; https://volamm.zing.vn",
+    "status": "Đang hoạt động",
+    "date": "23/01/2026"
+  },
+  {
+    "id": "131826",
+    "name": "SKYRIA: ĐẢO KỲ BÍ",
+    "company": "CÔNG TY CỔ PHẦN GGO",
+    "license": "28/QĐ-PTTH&TTĐT",
+    "domain": "http://www.dragonsoulawakening.com.vn/",
+    "status": "Đang hoạt động",
+    "date": "23/01/2026"
+  },
+  {
+    "id": "131793",
+    "name": "BẮN CÁ VUI VẺ",
+    "company": "Công ty TNHH VNGGames",
+    "license": "26/QĐ-PTTH&TTĐT",
+    "domain": "https://bcvv.choingay.vn",
+    "status": "Đang hoạt động",
+    "date": "23/01/2026"
+  },
+  {
+    "id": "131787",
+    "name": "THẾ GIỚI HOÀN MỸ",
+    "company": "CÔNG TY CỔ PHẦN QUANG MINH VIỆT NAM",
+    "license": "24/QĐ-PTTH&TTĐT",
+    "domain": "https://www.thegioihoanmy.vn",
+    "status": "Đang hoạt động",
+    "date": "22/01/2026"
+  },
+  {
+    "id": "131786",
+    "name": "TOTAL FOOTBALL VNG",
+    "company": "Công ty TNHH VNGGames",
+    "license": "21/QĐ-PTTH&TTĐT",
+    "domain": "https://totalfootball.vnggames.com",
+    "status": "Đang hoạt động",
+    "date": "22/01/2026"
+  },
+  {
+    "id": "131792",
+    "name": "TÂN THIÊN LONG",
+    "company": "CÔNG TY CỔ PHẦN TẬP ĐOÀN VNG -",
+    "license": "17/QĐ-PTTH&TTĐT",
+    "domain": "https://ttl3d.zing.vn",
+    "status": "Đang hoạt động",
+    "date": "15/01/2026"
+  },
+  {
+    "id": "131820",
+    "name": "3Q: TÂY ZU HÍ",
+    "company": "CÔNG TY CỔ PHẦN FUNTAP",
+    "license": "14/QĐ-PTTH&TTĐT",
+    "domain": "https://3qtzh.playfun.vn/",
+    "status": "Đang hoạt động",
+    "date": "13/01/2026"
+  },
+  {
+    "id": "131832",
+    "name": "TAM QUỐC: VÔ SONG TƯỚNG QUÂN",
+    "company": "CÔNG TY TNHH CÔNG NGHỆ MẠNG AT",
+    "license": "12/QĐ-PTTH&TTĐT",
+    "domain": "https://tamquocvosongtuongquan.atgame.com.vn/",
+    "status": "Đang hoạt động",
+    "date": "13/01/2026"
+  },
+  {
+    "id": "131822",
+    "name": "LỮ KHÁCH HỒN RỒNG",
+    "company": "CÔNG TY CỔ PHẦN PHÁT TRIỂN CÔNG NGHỆ SỐ HỒNG HÀ",
+    "license": "13/QĐ-PTTH&TTĐT",
+    "domain": "http://dt.hhgame.vn",
+    "status": "Đang hoạt động",
+    "date": "13/01/2026"
+  },
+  {
+    "id": "131831",
+    "name": "KAME TỐI THƯỢNG",
+    "company": "CÔNG TY TNHH MTF GROUP",
+    "license": "11/QĐ-PTTH&TTĐT",
+    "domain": "https://kame.mtfgroup.vn",
+    "status": "Đang hoạt động",
+    "date": "10/01/2026"
+  },
+  {
+    "id": "131790",
+    "name": "NGÔI SAO THỜI TRANG",
+    "company": "CÔNG TY CỔ PHẦN TẬP ĐOÀN VNG",
+    "license": "10/QĐ-PTTH&TTĐT",
+    "domain": "https://ngoisao.vnggames.com",
+    "status": "Đang hoạt động",
+    "date": "10/01/2026"
+  },
+  {
+    "id": "131791",
+    "name": "GUNNY PC",
+    "company": "CÔNG TY CỔ PHẦN TẬP ĐOÀN VNG",
+    "license": "09/QĐ-PTTH&TTĐT",
+    "domain": "https://gunnypc.vnggame.com",
+    "status": "Đang hoạt động",
+    "date": "10/01/2026"
+  },
+  {
+    "id": "131798",
+    "name": "LONG GIỚI",
+    "company": "CÔNG TY CỔ PHẦN TRUYỀN HÌNH TƯƠNG TÁC VIỆT NAM",
+    "license": "7/QĐ-PTTH&TTĐT",
+    "domain": "https://www.vplay.vn",
+    "status": "Đang hoạt động",
+    "date": "08/01/2026"
+  },
+  {
+    "id": "131800",
+    "name": "VÕ HIỆP TÌNH DUYÊN MOBILE",
+    "company": "CÔNG TY CỔ PHẦN EPICGOLD",
+    "license": "5/QĐ-PTTH&TTĐT",
+    "domain": "https://epicgold.vn",
+    "status": "Đang hoạt động",
+    "date": "07/01/2026"
+  },
+  {
+    "id": "131805",
+    "name": "VẸN NGUYÊN KÝ ỨC",
+    "company": "CÔNG TY TNHH DỊCH VỤ BÁCH GIA",
+    "license": "3/QĐ-PTTH&TTĐT",
+    "domain": "https://vennguyenkyuc.vn",
+    "status": "Đang hoạt động",
+    "date": "06/01/2026"
+  },
+  {
+    "id": "131778",
+    "name": "KING OF FIGHTERS: ĐƯỜNG ĐẾN VÔ ĐỊCH",
+    "company": "CÔNG TY CỔ PHẦN SOLAPLAY",
+    "license": "597/QĐ-PTTH&TTĐT",
+    "domain": "https://kof.vn",
+    "status": "Đang hoạt động",
+    "date": "31/12/2025"
+  },
+  {
+    "id": "131772",
+    "name": "THANH LONG HUYỀN THOẠI",
+    "company": "Công ty Cổ phần Song Long Game",
+    "license": "590/QĐ-PTTH&TTĐT",
+    "domain": "https://slgplay.vn",
+    "status": "Đang hoạt động",
+    "date": "31/12/2025"
+  },
+  {
+    "id": "131749",
+    "name": "BLEACH CỘNG HƯỞNG LINH HỒN",
+    "company": "CÔNG TY CỔ PHẦN CÔNG NGHỆ MOBI-GAME",
+    "license": "598/QĐ-PTTH&TTĐT",
+    "domain": "https://bleachsr.vn/",
+    "status": "Đang hoạt động",
+    "date": "31/12/2025"
+  },
+  {
+    "id": "131775",
+    "name": "SAY HI TAM QUỐC",
+    "company": "CÔNG TY TNHH SOHA",
+    "license": "601/QĐ-PTTH&TTĐT",
+    "domain": "https://sayhitamquoc.sohagame.vn",
+    "status": "Đang hoạt động",
+    "date": "31/12/2025"
+  },
+  {
+    "id": "131797",
+    "name": "QUỶ MÔN QUAN",
+    "company": "CÔNG TY CỔ PHẦN TRUYỀN HÌNH TƯƠNG TÁC VIỆT NAM",
+    "license": "602/QĐ-PTTH&TTĐT",
+    "domain": "https://www.vplay.vn",
+    "status": "Đang hoạt động",
+    "date": "31/12/2025"
+  },
+  {
+    "id": "131776",
+    "name": "THẦN TÍCH 3D",
+    "company": "CÔNG TY TNHH MOBILE INTELLIGENCE SAIGON",
+    "license": "599/QĐ-PTTH&TTĐT",
+    "domain": "https://thantich3d.intelligencessaigon.vn",
+    "status": "Đang hoạt động",
+    "date": "31/12/2025"
+  },
+  {
+    "id": "131781",
+    "name": "THIẾU NIÊN 3Q: KHỞI NGUYÊN",
+    "company": "CÔNG TY CỔ PHẦN GAMOTA",
+    "license": "583/QĐ-PTTH&TTĐT",
+    "domain": "http://gamota.com",
+    "status": "Đang hoạt động",
+    "date": "30/12/2025"
+  },
+  {
+    "id": "131780",
+    "name": "KIẾM VÀ LỬA",
+    "company": "CÔNG TY TNHH PHẦN MỀM WEPLAY",
+    "license": "584/QĐ-PTTH&TTĐT",
+    "domain": "https://kvl.weplayz.com",
+    "status": "Đang hoạt động",
+    "date": "30/12/2025"
+  },
+  {
+    "id": "131840",
+    "name": "TÂN OMG 3Q VNG",
+    "company": "Công ty TNHH VNGGames",
+    "license": "577/QĐ-PTTH&TTĐT",
+    "domain": "http://tanomg3q.vnggames.com/",
+    "status": "Đang hoạt động",
+    "date": "24/12/2025"
+  },
+  {
+    "id": "131839",
+    "name": "OMG 3Q - GAME TAM QUỐC VNG",
+    "company": "Công ty TNHH VNGGames",
+    "license": "574/QĐ-PTTH&TTĐT",
+    "domain": "https://omg3q.vnggames.com/",
+    "status": "Đang hoạt động",
+    "date": "24/12/2025"
+  },
+  {
+    "id": "131754",
+    "name": "NGHỊCH THỦY HÀN",
+    "company": "CÔNG TY CỔ PHẦN TẬP ĐOÀN VNG",
+    "license": "561/QĐ-PTTH&TTĐT",
+    "domain": "https://nghichthuyhan.vnggames.com",
+    "status": "Đang hoạt động",
+    "date": "19/12/2025"
+  },
+  {
+    "id": "131752",
+    "name": "GUNNY MOBI",
+    "company": "Công ty TNHH VNGGames",
+    "license": "563/QĐ-PTTH&TTĐT",
+    "domain": "https://gunnymobi.vn",
+    "status": "Đang hoạt động",
+    "date": "19/12/2025"
+  },
+  {
+    "id": "131760",
+    "name": "MẬT LỆNH",
+    "company": "CÔNG TY VTC CÔNG NGHỆ VÀ NỘI DUNG SỐ",
+    "license": "564 /QĐ-PTTH&TTĐT",
+    "domain": "http://matlenh.vtcgame.vn",
+    "status": "Đang hoạt động",
+    "date": "19/12/2025"
+  },
+  {
+    "id": "131761",
+    "name": "ĐẠI CHIẾN GIAI ĐIỆU",
+    "company": "CÔNG TY CỔ PHẦN GZONE MEDIA VIỆT NAM",
+    "license": "562/QĐ-PTTH&TTĐT",
+    "domain": "https://dcgd.zoneplay.vn",
+    "status": "Đang hoạt động",
+    "date": "19/12/2025"
+  },
+  {
+    "id": "131762",
+    "name": "MA VỰC THẦN ĐỒ",
+    "company": "CÔNG TY TNHH NEXFUN",
+    "license": "558/QĐ-PTTH&TTĐT",
+    "domain": "http://mavucthando.vn",
+    "status": "Đang hoạt động",
+    "date": "17/12/2025"
+  },
+  {
+    "id": "131764",
+    "name": "CHÂN LONG 2016",
+    "company": "CÔNG TY CỔ PHẦN TRÒ CHƠI VEGA",
+    "license": "556/QĐ-PTTH&TTĐT",
+    "domain": "https://chanlong.gaba.vn",
+    "status": "Đang hoạt động",
+    "date": "15/12/2025"
+  },
+  {
+    "id": "131751",
+    "name": "CỜ TƯỚNG ONLINE",
+    "company": "CÔNG TY CỔ PHẦN TRUYỀN THÔNG THIÊN PHƯỚC",
+    "license": "555/QĐ-PTTH&TTĐT",
+    "domain": "https://cotuong.tpplay.vn",
+    "status": "Đang hoạt động",
+    "date": "12/12/2025"
+  },
+  {
+    "id": "131769",
+    "name": "GHOST ONLINE PC VTC - THỢ SĂN LINH HỒN",
+    "company": "CÔNG TY CỔ PHẦN VTC DỊCH VỤ DI ĐỘNG",
+    "license": "552/QĐ-PTTH&TTĐT",
+    "domain": "https://ghost.vtczone.vn",
+    "status": "Đang hoạt động",
+    "date": "12/12/2025"
+  },
+  {
+    "id": "131755",
+    "name": "THIẾU NIÊN CA HÀNH: KHỞI ĐỘNG",
+    "company": "CÔNG TY CỔ PHẦN GAMOTA",
+    "license": "516 /QĐ-PTTH&TTĐT",
+    "domain": "http://gamota.com",
+    "status": "Đang hoạt động",
+    "date": "17/11/2025"
+  },
+  {
+    "id": "131726",
+    "name": "MU VĨNH HẰNG",
+    "company": "CÔNG TY CỔ PHẦN GIẢI TRÍ TRỰC TUYẾN 3T",
+    "license": "514/QĐ-PTTH&TTĐT",
+    "domain": "https://www.muvh.vn",
+    "status": "Đang hoạt động",
+    "date": "14/11/2025"
+  },
+  {
+    "id": "131718",
+    "name": "HÀO KHÍ CHIẾN HỒN",
+    "company": "CÔNG TY CỔ PHẦN DỊCH VỤ TRỰC TUYẾN MIGA",
+    "license": "510/QĐ-PTTH&TTĐT",
+    "domain": "http://haokhichienhon.vn/",
+    "status": "Đang hoạt động",
+    "date": "13/11/2025"
+  },
+  {
+    "id": "131758",
+    "name": "MÈO & SÚP: THỊ TRẤN BÌNH YÊN",
+    "company": "CÔNG TY CỔ PHẦN VTC TRUYỀN THÔNG TRỰC TUYẾN",
+    "license": "503/QĐ-PTTH&TTĐT",
+    "domain": "https://www.cns.goplay.vn",
+    "status": "Đang hoạt động",
+    "date": "11/11/2025"
+  },
+  {
+    "id": "131733",
+    "name": "TỐC HÀNH 3V3",
+    "company": "CÔNG TY CỔ PHẦN PHÁT TRIỂN CÔNG NGHỆ SỐ HỒNG HÀ",
+    "license": "502/QĐ-PTTH&TTĐT",
+    "domain": "https://driftracing3v3.vn",
+    "status": "Đang hoạt động",
+    "date": "10/11/2025"
+  },
+  {
+    "id": "131719",
+    "name": "GUNBOUND LEGEND - VUA TỌA ĐỘ",
+    "company": "CÔNG TY CỔ PHẦN VTC DỊCH VỤ DI ĐỘNG",
+    "license": "501/QĐ-PTTH&TTĐT",
+    "domain": "https://gunbound.splay.vn",
+    "status": "Đang hoạt động",
+    "date": "10/11/2025"
+  },
+  {
+    "id": "131732",
+    "name": "DC: QUÂN ĐOÀN BÓNG TỐI",
+    "company": "CÔNG TY CỔ PHẦN PHÁT TRIỂN CÔNG NGHỆ SỐ HỒNG HÀ",
+    "license": "500/QĐ-PTTH&TTĐT",
+    "domain": "http://qdbt.hhgame.vn/",
+    "status": "Đang hoạt động",
+    "date": "07/11/2025"
+  },
+  {
+    "id": "131737",
+    "name": "TIÊN KIẾM",
+    "company": "CÔNG TY CỔ PHẦN TRỰC TUYẾN CMN VIỆT NAM",
+    "license": "498/QĐ-PTTH&TTĐT",
+    "domain": "https://tienkiem.cmn.vn",
+    "status": "Đang hoạt động",
+    "date": "07/11/2025"
+  },
+  {
+    "id": "131735",
+    "name": "DẤU ẤN DIỆT QUỶ",
+    "company": "CÔNG TY CỔ PHẦN GZONE MEDIA VIỆT NAM",
+    "license": "497/QĐ-PTTH&TTĐT",
+    "domain": "https://dadq.zoneplay.vn",
+    "status": "Đang hoạt động",
+    "date": "07/11/2025"
+  },
+  {
+    "id": "131801",
+    "name": "3Q NGHỊCH CHUYỂN THỜI KHÔNG",
+    "company": "CÔNG TY CỔ PHẦN FUNTAP",
+    "license": "499/QĐ-PTTH&TTĐT",
+    "domain": "https://playfun.vn",
+    "status": "Đang hoạt động",
+    "date": "07/11/2025"
+  },
+  {
+    "id": "131725",
+    "name": "TA LÀM TÔNG SƯ TRONG TIÊN MÔN",
+    "company": "CÔNG TY CỔ PHẦN VISION GAME",
+    "license": "493/QĐ-PTTH&TTĐT",
+    "domain": "https://www.play.visiongame.vn.",
+    "status": "Đang hoạt động",
+    "date": "03/11/2025"
+  },
+  {
+    "id": "131731",
+    "name": "KIẾM LINH",
+    "company": "CÔNG TY CỔ PHẦN TRỰC TUYẾN CMN VIỆT NAM",
+    "license": "492/QĐ-PTTH&TTĐT",
+    "domain": "http://kiemlinh.cmn.vn",
+    "status": "Đang hoạt động",
+    "date": "03/11/2025"
+  },
+  {
+    "id": "131715",
+    "name": "QUỸ ĐẠO RỰC LỬA",
+    "company": "CÔNG TY TNHH CÔNG NGHỆ GIA ĐÌNH",
+    "license": "489/QĐ-PTTH&TTĐT",
+    "domain": "https://game.funzy.vn/",
+    "status": "Đang hoạt động",
+    "date": "31/10/2025"
+  },
+  {
+    "id": "131706",
+    "name": "THỢ SĂN DỊ GIỚI: KHỞI NGUYÊN",
+    "company": "CÔNG TY CỔ PHẦN SOLAPLAY",
+    "license": "487/QĐ-PTTH&TTĐT",
+    "domain": "https://ccskn.vn/",
+    "status": "Đang hoạt động",
+    "date": "31/10/2025"
+  },
+  {
+    "id": "131716",
+    "name": "THỢ SĂN RỒNG",
+    "company": "CÔNG TY TNHH CÔNG NGHỆ GIA ĐÌNH",
+    "license": "490/QĐ-PTTH&TTĐT",
+    "domain": "http://game.funzy.vn",
+    "status": "Đang hoạt động",
+    "date": "31/10/2025"
+  },
+  {
+    "id": "131694",
+    "name": "TÂY DU TẦM BẢO",
+    "company": "CÔNG TY TNHH SOHA",
+    "license": "480/QĐ-PTTH&TTĐT",
+    "domain": "https://taydutambao.sohagame.vn",
+    "status": "Đang hoạt động",
+    "date": "30/10/2025"
+  },
+  {
+    "id": "131704",
+    "name": "TOKYO GHOUL: THỨC TỈNH",
+    "company": "CÔNG TY CỔ PHẦN GAMOTA",
+    "license": "465/QĐ-PTTH&TTĐT",
+    "domain": "https://tgtt.gamota.com",
+    "status": "Đang hoạt động",
+    "date": "22/10/2025"
+  },
+  {
+    "id": "131685",
+    "name": "ARKNIGHTS: VÙNG ĐẤT TẬN CÙNG",
+    "company": "CÔNG TY CỔ PHẦN PHÁT TRIỂN CÔNG NGHỆ SỐ HỒNG HÀ",
+    "license": "464/QĐ-PTTH&TTĐT",
+    "domain": "http://endfield.hhgame.vn",
+    "status": "Đang hoạt động",
+    "date": "22/10/2025"
+  },
+  {
+    "id": "131705",
+    "name": "MIÊU ĐẾ TAM QUỐC",
+    "company": "Công ty TNHH Velalive",
+    "license": "457/QĐ-PTTH&TTĐT",
+    "domain": "https://mieude.velalive.vn/",
+    "status": "Đang hoạt động",
+    "date": "17/10/2025"
+  },
+  {
+    "id": "131710",
+    "name": "VÕ LÂM ĐẠI HIỆP KHÁCH",
+    "company": "CÔNG TY TNHH SOHA",
+    "license": "459/QĐ-PTTH&TTĐT",
+    "domain": "https://volamdaihiekhach.sohaga",
+    "status": "Đang hoạt động",
+    "date": "16/10/2025"
+  },
+  {
+    "id": "131681",
+    "name": "THAO TÚNG TAM QUỐC",
+    "company": "CÔNG TY CỔ PHẦN TRUYỀN HÌNH TƯƠNG TÁC VIỆT NAM",
+    "license": "455/QĐ-PTTH&TTĐT",
+    "domain": "http://www.thaotungtamquoc.vplay.vn/",
+    "status": "Đang hoạt động",
+    "date": "16/10/2025"
+  },
+  {
+    "id": "131680",
+    "name": "ĐẤU TRƯỜNG CHÂN LÝ",
+    "company": "CÔNG TY CỔ PHẦN TẬP ĐOÀN VNG",
+    "license": "456/QĐ-PTTH&TTĐT",
+    "domain": "https://dtcl.vnggames.com",
+    "status": "Đang hoạt động",
+    "date": "16/10/2025"
+  },
+  {
+    "id": "131708",
+    "name": "3Q CHESS - KỲ THỦ TAM QUỐC",
+    "company": "CÔNG TY TNHH SOHA",
+    "license": "461/QĐ-PTTH&TTĐT",
+    "domain": "https://3qchess.sohagame.vn/",
+    "status": "Đang hoạt động",
+    "date": "16/10/2025"
+  },
+  {
+    "id": "131678",
+    "name": "TRÌNH TAM QUỐC",
+    "company": "CÔNG TY CỔ PHẦN FUNTAP",
+    "license": "454/QĐ-PTTH&TTĐT",
+    "domain": "http://www.trinhtamquoc.playfun.vn/",
+    "status": "Đang hoạt động",
+    "date": "16/10/2025"
+  },
+  {
+    "id": "75550",
+    "name": "X TÂY DU",
+    "company": "CÔNG TY CỔ PHẦN TRỰC TUYẾN CMN VIỆT NAM",
+    "license": "453/QĐ-PTTH&TTĐT",
+    "domain": "http://xtaydu.cmn.vn",
+    "status": "Đang hoạt động",
+    "date": "16/10/2025"
+  },
+  {
+    "id": "131682",
+    "name": "TAM QUỐC CHÍ ONLINE",
+    "company": "Công ty TNHH Dzogame",
+    "license": "437/QĐ-PTTH&TTĐT",
+    "domain": "https://www.3k.dzogame.vn",
+    "status": "Đang hoạt động",
+    "date": "08/10/2025"
+  },
+  {
+    "id": "75523",
+    "name": "LỮ KHÁCH ĐẠI LỤC: IDLE RPG",
+    "company": "CÔNG TY CỔ PHẦN PHÁT TRIỂN CÔNG NGHỆ SỐ HỒNG HÀ",
+    "license": "430/QĐ-PTTH&TTĐT",
+    "domain": "https://www.hhgame.vn.",
+    "status": "Đang hoạt động",
+    "date": "30/09/2025"
+  },
+  {
+    "id": "75524",
+    "name": "PALMON: CUỘC CHIẾN SINH TỒN",
+    "company": "CÔNG TY CỔ PHẦN GAMOTA",
+    "license": "420/QĐ-PTTH&TTĐT",
+    "domain": "https://www.palmon.gamota.com",
+    "status": "Đang hoạt động",
+    "date": "26/09/2025"
+  },
+  {
+    "id": "131703",
+    "name": "THỦ LĨNH THẺ BÀI: CHÌA KHOÁ KÝ ỨC",
+    "company": "CÔNG TY CỔ PHẦN GIẢI PHÁP SỐ VISION NETWORK VIỆT NAM",
+    "license": "417/QĐ-PTTH&TTĐT",
+    "domain": "http://www.cardcaptor.vn/",
+    "status": "Đang hoạt động",
+    "date": "26/09/2025"
+  },
+  {
+    "id": "75528",
+    "name": "VÕ LÂM TIẾU NGẠO MOBILE",
+    "company": "CÔNG TY CỔ PHẦN GIẢI TRÍ VÀ CÔNG NGHỆ PERFIN",
+    "license": "418/QĐ-PTTH&TTĐT",
+    "domain": "https://vltn.fingame.vn",
+    "status": "Đang hoạt động",
+    "date": "26/09/2025"
+  },
+  {
+    "id": "75529",
+    "name": "CẤM GIỚI 2",
+    "company": "Công ty TNHH ZingPlay Việt Nam",
+    "license": "153/QĐ-PTTH&TTĐT",
+    "domain": "https://zingplay.com và http://boardcraftonline.vn.",
+    "status": "Đang hoạt động",
+    "date": "25/09/2025"
+  },
+  {
+    "id": "75519",
+    "name": "ATLAN ORIGIN -LỤC ĐỊA TRỖI DẬY",
+    "company": "CÔNG TY CỔ PHẦN VGP",
+    "license": "412 /QĐ-PTTH&TTĐT",
+    "domain": "https://vgplay.vn",
+    "status": "Đang hoạt động",
+    "date": "25/09/2025"
+  },
+  {
+    "id": "75521",
+    "name": "TRUYỀN KỲ TÁI KHỞI",
+    "company": "Công ty TNHH Công nghệ DanaGame",
+    "license": "414 /QĐ-PTTH&TTĐT",
+    "domain": "https://www.truyenkytaikhoi.vn",
+    "status": "Đang hoạt động",
+    "date": "25/09/2025"
+  },
+  {
+    "id": "75517",
+    "name": "CHIẾN THẦN MINI",
+    "company": "CÔNG TY TNHH MOBILE INTELLIGENCE SAIGON",
+    "license": "400 /QĐ-PTTH&TTĐT",
+    "domain": "https://chienthanmi.intelligenc",
+    "status": "Đang hoạt động",
+    "date": "19/09/2025"
+  },
+  {
+    "id": "75482",
+    "name": "LẠC THẦN CHIẾN CA",
+    "company": "CÔNG TY CỔ PHẦN TRỰC TUYẾN GOSU",
+    "license": "396/QĐ-PTTH&TTĐT",
+    "domain": "https://lacthan.gosu.vn.",
+    "status": "Đang hoạt động",
+    "date": "16/09/2025"
+  },
+  {
+    "id": "75484",
+    "name": "MỸ NHÂN QUYẾT",
+    "company": "CÔNG TY CỔ PHẦN TRÒ CHƠI MỘC",
+    "license": "391/QĐ-PTTH&TTĐT",
+    "domain": "https://jhrcdj.mocgame.vn và https://jhrcdjvn.mocgames.com",
+    "status": "Đang hoạt động",
+    "date": "15/09/2025"
+  },
+  {
+    "id": "75346",
+    "name": "NGÔI SAO SHOWBIZ",
+    "company": "CÔNG TY TNHH JOYGAMES",
+    "license": "388/QĐ-PTTH&TTĐT",
+    "domain": "https://joyplay.vn.",
+    "status": "Đang hoạt động",
+    "date": "11/09/2025"
+  },
+  {
+    "id": "75342",
+    "name": "HUYỀN THOẠI PHỤC YÊU",
+    "company": "CÔNG TY TNHH NEXFUN",
+    "license": "389/QĐ-PTTH&TTĐT",
+    "domain": "https://www.nexfungames.vn",
+    "status": "Đang hoạt động",
+    "date": "11/09/2025"
+  },
+  {
+    "id": "75515",
+    "name": "THIÊN LONG BÁT BỘ 2",
+    "company": "CÔNG TY CỔ PHẦN TẬP ĐOÀN VNG",
+    "license": "384/QĐ-PTTH&TTĐT",
+    "domain": "https://tlbb2.vnggames.com",
+    "status": "Đang hoạt động",
+    "date": "10/09/2025"
+  },
+  {
+    "id": "75468",
+    "name": "CUỘC CHIẾN CUỐI CÙNG: XẠ THỦ SINH TỒN",
+    "company": "CÔNG TY CỔ PHẦN PHÁT TRIỂN CÔNG NGHỆ SỐ HỒNG HÀ 0835481174",
+    "license": "382/QĐ-PTTH&TTĐT",
+    "domain": "https://www.hhgame.vn.",
+    "status": "Đang hoạt động",
+    "date": "10/09/2025"
+  },
+  {
+    "id": "75469",
+    "name": "ANH HÙNG BẤT DIỆT",
+    "company": "CÔNG TY CỔ PHẦN TRÒ CHƠI MỘC",
+    "license": "383/QĐ-PTTH&TTĐT",
+    "domain": "https://yymys.mocgame.vn và https://yxmysvn.mocgames.com",
+    "status": "Đang hoạt động",
+    "date": "10/09/2025"
+  },
+  {
+    "id": "75504",
+    "name": "THIÊN LONG BÁT BỘ 2",
+    "company": "CÔNG TY CỔ PHẦN TẬP ĐOÀN VNG",
+    "license": "384 /QĐ-PTTH&TTĐT",
+    "domain": "https://tlbb2.vnggames.com",
+    "status": "Đang hoạt động",
+    "date": "10/09/2025"
+  },
+  {
+    "id": "75475",
+    "name": "CHIẾN HOẢ TAM GIỚI",
+    "company": "CÔNG TY CỔ PHẦN VTC DỊCH VỤ DI ĐỘNG",
+    "license": "380/QĐ-PTTH&TTĐT",
+    "domain": "https://chienhoa.splay.vn.",
+    "status": "Đang hoạt động",
+    "date": "08/09/2025"
+  },
+  {
+    "id": "75466",
+    "name": "FC MOBILE",
+    "company": "CÔNG TY CỔ PHẦN GIẢI TRÍ VÀ THỂ THAO ĐIỆN TỬ VIỆT NAM",
+    "license": "378/QĐ-PTTH&TTĐT",
+    "domain": "https://fcmobile.garena.vn.",
+    "status": "Đang hoạt động",
+    "date": "04/09/2025"
+  },
+  {
+    "id": "75511",
+    "name": "TRU TIÊN KIẾM VŨ",
+    "company": "CÔNG TY TNHH SOHA",
+    "license": "377/QĐ-PTTH&TTĐT",
+    "domain": "http://trutienkiemvu.sohagame.vn/",
+    "status": "Đang hoạt động",
+    "date": "04/09/2025"
+  },
+  {
+    "id": "75510",
+    "name": "THẦN MA LOẠN VŨ",
+    "company": "CÔNG TY CỔ PHẦN TRUYỀN HÌNH TƯƠNG TÁC VIỆT NAM",
+    "license": "375/QĐ-PTTH&TTĐT",
+    "domain": "https://www.vplay.vn",
+    "status": "Đang hoạt động",
+    "date": "29/08/2025"
+  },
+  {
+    "id": "75514",
+    "name": "CROSSFIRE: LEGENDS",
+    "company": "CÔNG TY CỔ PHẦN TẬP ĐOÀN VNG",
+    "license": "374/QĐ-PTTH&TTĐT",
+    "domain": "https://cfl.vnggames.com/",
+    "status": "Đang hoạt động",
+    "date": "28/08/2025"
+  },
+  {
+    "id": "75494",
+    "name": "VŨ TRỤ 3Q",
+    "company": "CÔNG TY CỔ PHẦN TẬP ĐOÀN GIẢI TRÍ ĐẠI DƯƠNG",
+    "license": "365/QĐ-PTTH&TTĐT",
+    "domain": "https://www.play.oeggames.vn.",
+    "status": "Đang hoạt động",
+    "date": "21/08/2025"
+  },
+  {
+    "id": "75329",
+    "name": "TAM QUỐC CHIẾN",
+    "company": "CÔNG TY CỔ PHẦN FUNTAP",
+    "license": "367 /QĐ-PTTH&TTĐT",
+    "domain": "http://3qthoikhong.playfun.vn/",
+    "status": "Đang hoạt động",
+    "date": "21/08/2025"
+  },
+  {
+    "id": "75214",
+    "name": "KIẾM SƠN MOBILE",
+    "company": "CÔNG TY CỔ PHẦN GIẢI PHÁP CÔNG NGHỆ THÔNG TIN QUỐC TẾ",
+    "license": "362 /QĐ-PTTH&TTĐT",
+    "domain": "https://inplay.vn",
+    "status": "Đang hoạt động",
+    "date": "15/08/2025"
+  },
+  {
+    "id": "75211",
+    "name": "COOKIERUN: BÁNH QUY ĐẠI CHIẾN",
+    "company": "CÔNG TY CỔ PHẦN TẬP ĐOÀN VNG",
+    "license": "361 /QĐ-PTTH&TTĐT",
+    "domain": "https://bqdc.vnggames.com",
+    "status": "Đang hoạt động",
+    "date": "15/08/2025"
+  },
+  {
+    "id": "75215",
+    "name": "QUẦN ANH PHONG HOA LỤC",
+    "company": "CÔNG TY CỔ PHẦN TRUYỀN HÌNH TƯƠNG TÁC VIỆT NAM",
+    "license": "355 /QĐ-PTTH&TTĐT",
+    "domain": "https://quananhphonghoaluc.vplay.vn/",
+    "status": "Đang hoạt động",
+    "date": "11/08/2025"
+  },
+  {
+    "id": "75535",
+    "name": "THIẾU NIÊN TÂY DU",
+    "company": "CÔNG TY CỔ PHẦN VTC DỊCH VỤ DI ĐỘNG",
+    "license": "349/QĐ-PTTH&TTĐT",
+    "domain": "https://thieunientaydu.splay.vn",
+    "status": "Đang hoạt động",
+    "date": "07/08/2025"
+  },
+  {
+    "id": "75525",
+    "name": "ĐẠI CHIẾN LOREN",
+    "company": "CÔNG TY CỔ PHẦN TITAN STUDIO VIỆT NAM",
+    "license": "348/QĐ-PTTH&TTĐT",
+    "domain": "https://www.daichienloren.vn",
+    "status": "Đang hoạt động",
+    "date": "07/08/2025"
+  },
+  {
+    "id": "131700",
+    "name": "LIÊN MINH VALKYRIE",
+    "company": "CÔNG TY CỔ PHẦN ĐẦU TƯ CÔNG NGHỆ VISION INVEST",
+    "license": "351/QĐ-PTTH&TTĐT",
+    "domain": "https://www.lienminhvalkyrie.vn",
+    "status": "Đang hoạt động",
+    "date": "07/08/2025"
+  },
+  {
+    "id": "131697",
+    "name": "HOÁ THẦN: TRẤN MA TRUYỆN",
+    "company": "CÔNG TY CỔ PHẦN VISION GAME",
+    "license": "352/QĐ-PTTH&TTĐT",
+    "domain": "https://www.tranmatruyen.vn",
+    "status": "Đang hoạt động",
+    "date": "07/08/2025"
+  },
+  {
+    "id": "131773",
+    "name": "THẾ GIỚI HOÀN MỸ 2",
+    "company": "Công ty cổ phần Solaplay",
+    "license": "347/QĐ-PTTH&TTĐT",
+    "domain": "https:// www.tghm2.vn",
+    "status": "Đang hoạt động",
+    "date": "07/08/2025"
+  },
+  {
+    "id": "131785",
+    "name": "Võ Lâm Chân Mệnh Origin (VLCM Origin)",
+    "company": "Công Ty Cổ phần Tepaylink",
+    "license": "336/QĐ-PTTH&TTĐT",
+    "domain": "http://www.mongchiton.vn/",
+    "status": "Đang hoạt động",
+    "date": "31/07/2025"
+  },
+  {
+    "id": "75483",
+    "name": "MU: HỒNG HỎA ĐAO",
+    "company": "CÔNG TY CỔ PHẦN GAMOTA",
+    "license": "333/QĐ-PTTH&TTĐT",
+    "domain": "https://www.muhhd.gamota.com",
+    "status": "Đang hoạt động",
+    "date": "30/07/2025"
+  },
+  {
+    "id": "75542",
+    "name": "THẦN KIẾM PHONG MA LỤC",
+    "company": "CÔNG TY CỔ PHẦN TẬP ĐOÀN GIẢI TRÍ ĐẠI DƯƠNG",
+    "license": "334 /QĐ-PTTH&TTĐT",
+    "domain": "https://www.play.oeggames.vn",
+    "status": "Đang hoạt động",
+    "date": "30/07/2025"
+  },
+  {
+    "id": "131757",
+    "name": "DŨNG SĨ TRỞ LẠI: KHẾ ƯỚC THẦN",
+    "company": "CÔNG TY CỔ PHẦN PHÁT TRIỂN CÔNG NGHỆ SỐ HỒNG HÀ",
+    "license": "332/QĐ-PTTH&TTĐT",
+    "domain": "https://dungsitrolai.hhgame.vn",
+    "status": "Đang hoạt động",
+    "date": "18/07/2025"
+  },
+  {
+    "id": "131774",
+    "name": "TU TIÊN CHI LỘ",
+    "company": "CÔNG TY CỔ PHẦN TẬP ĐOÀN GIẢI TRÍ ĐẠI DƯƠNG",
+    "license": "331/QĐ-PTTH&TTĐT",
+    "domain": "https://tutien.oeggames.vn",
+    "status": "Đang hoạt động",
+    "date": "18/07/2025"
+  },
+  {
+    "id": "75509",
+    "name": "MU LỤC ĐỊA VNG",
+    "company": "CÔNG TY CỔ PHẦN TẬP ĐOÀN VNG",
+    "license": "323/QĐ-PTTH&TTĐT",
+    "domain": "https://mulucdia.vnggames.com",
+    "status": "Đang hoạt động",
+    "date": "17/07/2025"
+  },
+  {
+    "id": "75339",
+    "name": "CHIẾN LOẠN TAM QUỐC",
+    "company": "CÔNG TY CỔ PHẦN TRỰC TUYẾN CMN VIỆT NAM",
+    "license": "315/QĐ-PTTH&TTĐT",
+    "domain": "http://game.cmn.vn.",
+    "status": "Đang hoạt động",
+    "date": "15/07/2025"
+  },
+  {
+    "id": "75549",
+    "name": "TAM QUỐC TRUYỀN KỲ: TÁI XUẤT",
+    "company": "CÔNG TY CỔ PHẦN FUNTAP",
+    "license": "314 /QĐ-PTTH&TTĐT",
+    "domain": "https://www.playfun.vn.",
+    "status": "Đang hoạt động",
+    "date": "10/07/2025"
+  },
+  {
+    "id": "131724",
+    "name": "ĐẶC NHIỆM DELTA",
+    "company": "CÔNG TY TNHH Dịch vụ phần mềm Hòa Thái",
+    "license": "307/QĐ-PTTH&TTĐT",
+    "domain": "https://www.deltaforce.vn",
+    "status": "Đang hoạt động",
+    "date": "08/07/2025"
+  },
+  {
+    "id": "75207",
+    "name": "NGUYỆT MỘNG",
+    "company": "CÔNG TY CỔ PHẦN THS GAME",
+    "license": "305 /QĐ-PTTH&TTĐT",
+    "domain": "https://nguyetmong.thsgame.com.vn.",
+    "status": "Đang hoạt động",
+    "date": "04/07/2025"
+  },
+  {
+    "id": "131717",
+    "name": "Vua Bắn Cá",
+    "company": "CÔNG TY CỔ PHẦN 9PLAY",
+    "license": "301/QĐ-PTTH&TTĐT",
+    "domain": "http://www.vuabanca.vn/",
+    "status": "Đang hoạt động",
+    "date": "30/06/2025"
+  },
+  {
+    "id": "75545",
+    "name": "CHUYỂN SINH TA LÀ VUA TAM QUỐC",
+    "company": "CÔNG TY CỔ PHẦN FUNTAP",
+    "license": "300 /QĐ-PTTH&TTĐT",
+    "domain": "https://www.playfun.vn",
+    "status": "Đang hoạt động",
+    "date": "30/06/2025"
+  },
+  {
+    "id": "131687",
+    "name": "NGỌC RỒNG AWAKEN",
+    "company": "CÔNG TY CỔ PHẦN 9PLAY",
+    "license": "299/QĐ-PTTH&TTĐT",
+    "domain": "https://ngocrongawaken.vn",
+    "status": "Đang hoạt động",
+    "date": "30/06/2025"
+  },
+  {
+    "id": "131693",
+    "name": "ISEKAI: NẤM LÙN GO",
+    "company": "CÔNG TY CỔ PHẦN GIẢI TRÍ TRỰC TUYẾN KAN",
+    "license": "295/QĐ-PTTH&TTĐT",
+    "domain": "https://namlungo.vn",
+    "status": "Đang hoạt động",
+    "date": "27/06/2025"
+  },
+  {
+    "id": "75213",
+    "name": "THỨC THẦN KÝ",
+    "company": "CÔNG TY CỔ PHẦN VGP",
+    "license": "298 /QĐ-PTTH&TTĐT",
+    "domain": "http://hkcc.vgplay.vn",
+    "status": "Đang hoạt động",
+    "date": "27/06/2025"
+  },
+  {
+    "id": "75540",
+    "name": "QUỶ TƯỚNG 3Q: THỨC TỈNH",
+    "company": "CÔNG TY CỔ PHẦN TẬP ĐOÀN GIẢI TRÍ ĐẠI DƯƠNG",
+    "license": "296/QĐ-PTTH&TTĐT",
+    "domain": "https://www.play.oeggames.vn.",
+    "status": "Đang hoạt động",
+    "date": "27/06/2025"
+  },
+  {
+    "id": "131686",
+    "name": "CỜ PHÉP THUẬT",
+    "company": "CÔNG TY CỔ PHẦN PHÁT TRIỂN CÔNG NGHỆ SỐ HỒNG HÀ",
+    "license": "282/QĐ-PTTH&TTĐT",
+    "domain": "https://www.mgcgg.hhgame.vn",
+    "status": "Đang hoạt động",
+    "date": "26/06/2025"
+  },
+  {
+    "id": "131813",
+    "name": "LIÊN QUÂN MOBILE",
+    "company": "CÔNG TY CỔ PHẦN GIẢI TRÍ VÀ THỂ THAO ĐIỆN TỬ VIỆT NAM",
+    "license": "281/QĐ-PTTH&TTĐT",
+    "domain": "http://lienquanmobi.vn",
+    "status": "Đang hoạt động",
+    "date": "26/06/2025"
+  },
+  {
+    "id": "131688",
+    "name": "VÙNG TỐI SỐNG CÒN",
+    "company": "CÔNG TY CỔ PHẦN PHÁT TRIỂN CÔNG NGHỆ SỐ HỒNG HÀ",
+    "license": "286 /QĐ-PTTH&TTĐT",
+    "domain": "https://www.hhgame.vn",
+    "status": "Đang hoạt động",
+    "date": "26/06/2025"
+  },
+  {
+    "id": "131720",
+    "name": "TRÒ CHƠI SINH TỒN",
+    "company": "CÔNG TY TNHH DỊCH VỤ PHẦN MỀM THIÊN BÌNH",
+    "license": "278/QĐ-PTTH&TTĐT",
+    "domain": "https://www.trochoisinhton.vn",
+    "status": "Đang hoạt động",
+    "date": "24/06/2025"
+  },
+  {
+    "id": "128228",
+    "name": "VÕ LÂM TRUYỀN KỲ MOBILE",
+    "company": "CÔNG TY CỔ PHẦN VNG",
+    "license": "265/QĐ-PTTH&TTĐT",
+    "domain": "https://vltkm.zing.vn",
+    "status": "Đang hoạt động",
+    "date": "20/06/2025"
+  },
+  {
+    "id": "75203",
+    "name": "STICKMAN 1 GO: NGƯỜI QUE XÔNG LÊN",
+    "company": "CÔNG TY CỔ PHẦN TRÒ CHƠI MỘC",
+    "license": "268 /QĐ-PTTH&TTĐT",
+    "domain": "https://stickmango.mocgame.vn",
+    "status": "Đang hoạt động",
+    "date": "20/06/2025"
+  },
+  {
+    "id": "75526",
+    "name": "TÌNH KIẾM CHI MỘNG",
+    "company": "CÔNG TY CỔ PHẦN TITAN STUDIO VIỆT NAM",
+    "license": "272/QĐ-PTTH&TTĐT",
+    "domain": "https://tinhkiemchimong.vn",
+    "status": "Đang hoạt động",
+    "date": "20/06/2025"
+  },
+  {
+    "id": "75204",
+    "name": "TÂN THIÊN LONG",
+    "company": "CÔNG TY CỔ PHẦN VNG",
+    "license": "258 /QĐ-PTTH&TTĐT",
+    "domain": "http://ttl3d.zing.vn",
+    "status": "Đang hoạt động",
+    "date": "20/06/2025"
+  },
+  {
+    "id": "128604",
+    "name": "LIÊN MINH HUYỀN THOẠI: TỐC CHIẾN",
+    "company": "CÔNG TY CỔ PHẦN VNG",
+    "license": "263/QĐ-PTTH&TTĐT",
+    "domain": "https://tocchien.vnggames.com",
+    "status": "Đang hoạt động",
+    "date": "20/06/2025"
+  },
+  {
+    "id": "75516",
+    "name": "KỶ NGUYÊN HẢI TẶC",
+    "company": "CÔNG TY CỔ PHẦN GIẢI TRÍ 568E",
+    "license": "271/QĐ-PTTH&TTĐT",
+    "domain": "https://www.kynguyenhaitac.vn",
+    "status": "Đang hoạt động",
+    "date": "20/06/2025"
+  },
+  {
+    "id": "131451",
+    "name": "CLOUDSONG: VÂN THÀNH CHI CA",
+    "company": "CÔNG TY CỔ PHẦN VNG",
+    "license": "259/QĐ-PTTH&TTĐT",
+    "domain": "http://cloudsong.zing.vn",
+    "status": "Đang hoạt động",
+    "date": "20/06/2025"
+  },
+  {
+    "id": "128668",
+    "name": "VALORANT",
+    "company": "CÔNG TY CỔ PHẦN VNG",
+    "license": "262/QĐ-PTTH&TTĐT",
+    "domain": "http://valorant.vnggames.com",
+    "status": "Đang hoạt động",
+    "date": "20/06/2025"
+  },
+  {
+    "id": "131452",
+    "name": "HUYỀN THOẠI RUNETERRA",
+    "company": "CÔNG TY CỔ PHẦN VNG",
+    "license": "261/QĐ-PTTH&TTĐT",
+    "domain": "http://lor.zing.vn",
+    "status": "Đang hoạt động",
+    "date": "20/06/2025"
+  },
+  {
+    "id": "128612",
+    "name": "PLAY TOGETHER VNG",
+    "company": "CÔNG TY CỔ PHẦN VNG",
+    "license": "256/QĐ-PTTH&TTĐT",
+    "domain": "http://playtogether.vnggames.com",
+    "status": "Đang hoạt động",
+    "date": "18/06/2025"
+  },
+  {
+    "id": "75548",
+    "name": "SIÊU ĐẬU TIẾN CÔNG",
+    "company": "CÔNG TY CỔ PHẦN FUNTAP",
+    "license": "234/QĐ-PTTH&TTĐT",
+    "domain": "https://www.playfun.vn",
+    "status": "Đang hoạt động",
+    "date": "06/06/2025"
+  },
+  {
+    "id": "75467",
+    "name": "HUYỀN ẢNH VÕ LÂM",
+    "company": "CÔNG TY CỔ PHẦN TRUYỀN HÌNH TƯƠNG TÁC VIỆT NAM",
+    "license": "238/QĐ-PTTH&TTĐT",
+    "domain": "https://www.vplay.vn",
+    "status": "Đang hoạt động",
+    "date": "06/06/2025"
+  },
+  {
+    "id": "75537",
+    "name": "TIÊN ĐẠO TA ĐỘC TÔN",
+    "company": "CÔNG TY CỔ PHẦN VTC DỊCH VỤ DI ĐỘNG",
+    "license": "231/QĐ-PTTH&TTĐT",
+    "domain": "https://tiendaotadocton.vn.",
+    "status": "Đang hoạt động",
+    "date": "03/06/2025"
+  },
+  {
+    "id": "128226",
+    "name": "VÕ LÂM CÔNG THÀNH CHIẾN",
+    "company": "CÔNG TY CỔ PHẦN VNG",
+    "license": "218/QĐ-PTTH&TTĐT",
+    "domain": "https://ctc.vnggames.com",
+    "status": "Đang hoạt động",
+    "date": "30/05/2025"
+  },
+  {
+    "id": "128658",
+    "name": "VÕ LÂM MIỄN PHÍ",
+    "company": "CÔNG TY CỔ PHẦN VNG",
+    "license": "219/QĐ-PTTH&TTĐT",
+    "domain": "http://volammienphi.vnggames.com",
+    "status": "Đang hoạt động",
+    "date": "30/05/2025"
+  },
+  {
+    "id": "131449",
+    "name": "TAM QUỐC HUYỄN TƯỚNG VNG",
+    "company": "CÔNG TY CỔ PHẦN VNG",
+    "license": "217/QĐ-PTTH&TTĐT",
+    "domain": "https://tamquochuyentuong.vnggames.com",
+    "status": "Đang hoạt động",
+    "date": "30/05/2025"
+  },
+  {
+    "id": "75536",
+    "name": "TAM QUỐC LEGEND – HUYỀN THOẠI TAM QUỐC",
+    "company": "CÔNG TY CỔ PHẦN VTC DỊCH VỤ DI ĐỘNG",
+    "license": "220/QĐ-PTTH&TTĐT",
+    "domain": "https://tamquoclegend.splay.vn.",
+    "status": "Đang hoạt động",
+    "date": "30/05/2025"
+  },
+  {
+    "id": "128217",
+    "name": "DANH TƯỚNG 3Q - VNG",
+    "company": "CÔNG TY CỔ PHẦN VNG",
+    "license": "215/QĐ-PTTH&TTĐT",
+    "domain": "https://www.dt3q.zing.vn",
+    "status": "Đang hoạt động",
+    "date": "29/05/2025"
+  },
+  {
+    "id": "128316",
+    "name": "PUBG MOBILE VNG",
+    "company": "CÔNG TY CỔ PHẦN VNG",
+    "license": "209/QĐ-PTTH&TTĐT",
+    "domain": "https://pubgm.zing.vn",
+    "status": "Đang hoạt động",
+    "date": "29/05/2025"
+  },
+  {
+    "id": "131445",
+    "name": "CÁ BÉO",
+    "company": "CÔNG TY CỔ PHẦN VNG",
+    "license": "211/QĐ-PTTH&TTĐT",
+    "domain": "http://cabeo.zingplay.com",
+    "status": "Đang hoạt động",
+    "date": "29/05/2025"
+  },
+  {
+    "id": "128331",
+    "name": "CỜ TỶ PHÚ",
+    "company": "CÔNG TY CỔ PHẦN VNG",
+    "license": "205/QĐ-PTTH&TTĐT",
+    "domain": "http://typhu.360play.vn",
+    "status": "Đang hoạt động",
+    "date": "28/05/2025"
+  },
+  {
+    "id": "128597",
+    "name": "KHU VƯỜN TRÊN MÂY",
+    "company": "CÔNG TY CỔ PHẦN VNG",
+    "license": "204/QĐ-PTTH&TTĐT",
+    "domain": "http://kvtm.vn",
+    "status": "Đang hoạt động",
+    "date": "28/05/2025"
+  },
+  {
+    "id": "128571",
+    "name": "FARMERTY",
+    "company": "CÔNG TY CỔ PHẦN VNG",
+    "license": "206/QĐ-PTTH&TTĐT",
+    "domain": "http://farmery.vn",
+    "status": "Đang hoạt động",
+    "date": "28/05/2025"
+  },
+  {
+    "id": "128645",
+    "name": "GUNNY ORIGIN",
+    "company": "CÔNG TY CỔ PHẦN VNG",
+    "license": "203/QĐ-PTTH&TTĐT",
+    "domain": "https://gunny.zing.vn",
+    "status": "Đang hoạt động",
+    "date": "28/05/2025"
+  },
+  {
+    "id": "75196",
+    "name": "LIÊN MINH HUYỀN THOẠI",
+    "company": "CÔNG TY CỔ PHẦN VNG",
+    "license": "198/QĐ-PTTH&TTĐT",
+    "domain": "https://lienminh.vnggames.com",
+    "status": "Đang hoạt động",
+    "date": "28/05/2025"
+  },
+  {
+    "id": "128653",
+    "name": "REVELATION",
+    "company": "CÔNG TY CỔ PHẦN VNG",
+    "license": "200/QĐ-PTTH&TTĐT",
+    "domain": "https://revelation.vnggames.com",
+    "status": "Đang hoạt động",
+    "date": "28/05/2025"
+  },
+  {
+    "id": "128657",
+    "name": "VÕ HỒN ĐẠI LỤC VNG",
+    "company": "CÔNG TY CỔ PHẦN VNG",
+    "license": "201/QĐ-PTTH&TTĐT",
+    "domain": "https://vohondailuc.vnggames.com",
+    "status": "Đang hoạt động",
+    "date": "28/05/2025"
+  },
+  {
+    "id": "131712",
+    "name": "TIỆM TẠP HÓA THỜI GIAN",
+    "company": "CÔNG TY CỔ PHẦN ĐẦU TƯ CÔNG NGHỆ VISION INVEST",
+    "license": "193/QĐ-PTTH&TTĐT",
+    "domain": "https://www.tiemtaphoathoigian.vn",
+    "status": "Đang hoạt động",
+    "date": "22/05/2025"
+  },
+  {
+    "id": "128646",
+    "name": "MU AWAKEN - VNG",
+    "company": "CÔNG TY CỔ PHẦN VNG",
+    "license": "195/QĐ-PTTH&TTĐT",
+    "domain": "https://mua.vnggames.com",
+    "status": "Đang hoạt động",
+    "date": "22/05/2025"
+  },
+  {
+    "id": "128639",
+    "name": "ARENA BREAKOUT VNG",
+    "company": "CÔNG TY TNHH TRUYỀN THÔNG MINH PHƯƠNG THỊNH",
+    "license": "186/QĐ-PTTH&TTĐT",
+    "domain": "https://www.arenabreakout.vnggames.com",
+    "status": "Đang hoạt động",
+    "date": "16/05/2025"
+  },
+  {
+    "id": "128546",
+    "name": "Lineage2M",
+    "company": "CÔNG TY TNHH TRUYỀN THÔNG MINH PHƯƠNG THỊNH",
+    "license": "183/QĐ-PTTH&TTĐT",
+    "domain": "http://lineage2m.vnggames.com",
+    "status": "Đang hoạt động",
+    "date": "16/05/2025"
+  },
+  {
+    "id": "75331",
+    "name": "YÊU HỒ 9D",
+    "company": "CÔNG TY CỔ PHẦN TRUYỀN HÌNH TƯƠNG TÁC VIỆT NAM",
+    "license": "165/QĐ-PTTH&TTĐT",
+    "domain": "https://www.vplay.vn.",
+    "status": "Đang hoạt động",
+    "date": "08/05/2025"
+  },
+  {
+    "id": "75333",
+    "name": "MÊ TA TAM QUỐC",
+    "company": "CÔNG TY CỔ PHẦN TRUYỀN HÌNH TƯƠNG TÁC VIỆT NAM",
+    "license": "168/QĐ-PTTH&TTĐT",
+    "domain": "https://www.vplay.vn.",
+    "status": "Đang hoạt động",
+    "date": "08/05/2025"
+  },
+  {
+    "id": "131728",
+    "name": "THÀNH PHỐ TỰ DO",
+    "company": "CÔNG TY TNHH DỊCH VỤ PHẦN MỀM BÌNH MINH",
+    "license": "154/QĐ-PTTH&TTĐT",
+    "domain": "https://freecity.vn.",
+    "status": "Đang hoạt động",
+    "date": "29/04/2025"
+  },
+  {
+    "id": "128315",
+    "name": "THIÊN NHAI MINH NGUYỆT ĐAO VNG",
+    "company": "CÔNG TY CỔ PHẦN VNG",
+    "license": "142/QĐ-PTTH&TTĐT",
+    "domain": "https://thiennhai.vnggames.com",
+    "status": "Đang hoạt động",
+    "date": "26/04/2025"
+  },
+  {
+    "id": "131698",
+    "name": "CHIẾN TUYẾN HƯỚNG DƯƠNG",
+    "company": "CÔNG TY TNHH PHẦN MỀM MGOL",
+    "license": "145/QĐ-PTTH&TTĐT",
+    "domain": "https://cthd.mgol.vn",
+    "status": "Đang hoạt động",
+    "date": "26/04/2025"
+  },
+  {
+    "id": "75532",
+    "name": "HOA SƠN KIẾM THẾ",
+    "company": "CÔNG TY CỔ PHẦN VTC DỊCH VỤ DI ĐỘNG",
+    "license": "138 /QĐ-PTTH&TTĐT",
+    "domain": "https://hoasonkiemthe.splay.vn",
+    "status": "Đang hoạt động",
+    "date": "23/04/2025"
+  },
+  {
+    "id": "131446",
+    "name": "KIẾM THẾ ORIGIN",
+    "company": "CÔNG TY CỔ PHẦN VNG",
+    "license": "139/QĐ-PTTH&TTĐT",
+    "domain": "https://kto.vnggames.com",
+    "status": "Đang hoạt động",
+    "date": "23/04/2025"
+  },
+  {
+    "id": "128592",
+    "name": "GUN POW",
+    "company": "CÔNG TY CỔ PHẦN VNG",
+    "license": "140/QĐ-PTTH&TTĐT",
+    "domain": "https://gunpow.360game.vn",
+    "status": "Đang hoạt động",
+    "date": "23/04/2025"
+  },
+  {
+    "id": "75551",
+    "name": "LÀNG HẢI TẶC",
+    "company": "CÔNG TY TNHH FUNNY SOFT",
+    "license": "137/QĐ-PTTH&TTĐT",
+    "domain": "https://langhaitac.funnysoft.net",
+    "status": "Đang hoạt động",
+    "date": "23/04/2025"
+  },
+  {
+    "id": "128568",
+    "name": "BOMBER VNG",
+    "company": "CÔNG TY CỔ PHẦN VNG",
+    "license": "135/QĐ-PTTH&TTĐT",
+    "domain": "https://bomber.vnggamers.com",
+    "status": "Đang hoạt động",
+    "date": "22/04/2025"
+  },
+  {
+    "id": "131450",
+    "name": "THIÊN LONG ORIGIN",
+    "company": "CÔNG TY CỔ PHẦN VNG",
+    "license": "130/QĐ-PTTH&TTĐT",
+    "domain": "https://tlo.vnggames.com",
+    "status": "Đang hoạt động",
+    "date": "21/04/2025"
+  },
+  {
+    "id": "128655",
+    "name": "THIÊN LONG BÁT BỘ 2",
+    "company": "CÔNG TY CỔ PHẦN VNG",
+    "license": "132/QĐ-PTTH&TTĐT",
+    "domain": "https://tlbb2.vnggames.com",
+    "status": "Đang hoạt động",
+    "date": "21/04/2025"
+  },
+  {
+    "id": "128661",
+    "name": "VÕ LÂM TRUYỀN KỲ MAX",
+    "company": "CÔNG TY CỔ PHẦN VNG",
+    "license": "133/QĐ-PTTH&TTĐT",
+    "domain": "https://vltkmax.zing.vn",
+    "status": "Đang hoạt động",
+    "date": "21/04/2025"
+  },
+  {
+    "id": "75477",
+    "name": "ĐẤU PHÁ THƯƠNG KHUNG 2D",
+    "company": "CÔNG TY CỔ PHẦN GAMOTA",
+    "license": "129/QĐ-PTTH&TTĐT",
+    "domain": "https://www.dptk.gamota.com",
+    "status": "Đang hoạt động",
+    "date": "21/04/2025"
+  },
+  {
+    "id": "128225",
+    "name": "THIÊN LONG BÁT BỘ VNG",
+    "company": "CÔNG TY CỔ PHẦN VNG",
+    "license": "119/QĐ-PTTH&TTĐT",
+    "domain": "https://tlbbvng.vnggames.com",
+    "status": "Đang hoạt động",
+    "date": "17/04/2025"
+  },
+  {
+    "id": "128652",
+    "name": "PLAY TOGETHER VNG",
+    "company": "CÔNG TY CỔ PHẦN VNG",
+    "license": "126/QĐ-PTTH&TTĐT",
+    "domain": "http://playtogether.vnggames.com",
+    "status": "Đang hoạt động",
+    "date": "17/04/2025"
+  },
+  {
+    "id": "128643",
+    "name": "GHOST STORY",
+    "company": "CÔNG TY CỔ PHẦN VNG",
+    "license": "125/QĐ-PTTH&TTĐT",
+    "domain": "https://ghoststory.vnggames.com/",
+    "status": "Đang hoạt động",
+    "date": "17/04/2025"
+  },
+  {
+    "id": "131750",
+    "name": "VÕ LÂM TRUYỀN KỲ 2.0",
+    "company": "Công ty Cổ phần Tập đoàn VNG",
+    "license": "329/QĐ-PTTH&TTĐT",
+    "domain": "https://vltk20.vnggames.com",
+    "status": "Đang hoạt động",
+    "date": "17/04/2025"
+  },
+  {
+    "id": "127688",
+    "name": "TÂY DU VNG - ĐẠI NÁO TAM GIỚI",
+    "company": "CÔNG TY CỔ PHẦN VNG",
+    "license": "118/QĐ-PTTH&TTĐT",
+    "domain": "https://taydu.vnggames.net",
+    "status": "Đang hoạt động",
+    "date": "17/04/2025"
+  },
+  {
+    "id": "128576",
+    "name": "FORSAKENWORLD2: THẦN MA ĐẠI CHIẾN",
+    "company": "CÔNG TY CỔ PHẦN VNG",
+    "license": "121/QĐ-PTTH&TTĐT",
+    "domain": "https://fw2vn.vnggames.com",
+    "status": "Đang hoạt động",
+    "date": "17/04/2025"
+  },
+  {
+    "id": "128332",
+    "name": "HELLO CAFÉ",
+    "company": "CÔNG TY CỔ PHẦN VNG",
+    "license": "123/QĐ-PTTH&TTĐT",
+    "domain": "https://hellocafe.vnggames.com",
+    "status": "Đang hoạt động",
+    "date": "17/04/2025"
+  },
+  {
+    "id": "131430",
+    "name": "METAL SLUG: AWAKENING",
+    "company": "CÔNG TY CỔ PHẦN VNG",
+    "license": "124/QĐ-PTTH&TTĐT",
+    "domain": "https://https:/metalslugawk.vnggames.com/vn",
+    "status": "Đang hoạt động",
+    "date": "17/04/2025"
+  },
+  {
+    "id": "128500",
+    "name": "LỤC ĐỊA HẮC ÁM",
+    "company": "CÔNG TY TNHH OPENGAME",
+    "license": "113/QĐ-PTTH&TTĐT",
+    "domain": "https://ldha.opengame.vn",
+    "status": "Đang hoạt động",
+    "date": "15/04/2025"
+  },
+  {
+    "id": "131684",
+    "name": "SIPHER PHIÊU LƯU KÝ",
+    "company": "Công ty TNHH Beyond Atoms",
+    "license": "115/QĐ-PTTH&TTĐT",
+    "domain": "https://beyondatoms.vn",
+    "status": "Đang hoạt động",
+    "date": "15/04/2025"
+  },
+  {
+    "id": "75330",
+    "name": "THỜI KHÔNG CHI MỘNG",
+    "company": "CÔNG TY CỔ PHẦN TRUYỀN HÌNH TƯƠNG TÁC VIỆT NAM",
+    "license": "108/QĐ-PTTH&TTĐT",
+    "domain": "https://www.vplay.vn.",
+    "status": "Đang hoạt động",
+    "date": "09/04/2025"
+  },
+  {
+    "id": "128494",
+    "name": "HỌC VIỆN ANIME",
+    "company": "CÔNG TY TNHH VMGE",
+    "license": "106/QĐ-PTTH&TTĐT",
+    "domain": "https://hocvienanime.vn",
+    "status": "Đang hoạt động",
+    "date": "09/04/2025"
+  },
+  {
+    "id": "128660",
+    "name": "VÕ LÂM TRUYỀN KỲ",
+    "company": "CÔNG TY CỔ PHẦN VNG",
+    "license": "104/QĐ-PTTH&TTĐT",
+    "domain": "https://volam.com.vn/volamtruyenky",
+    "status": "Đang hoạt động",
+    "date": "08/04/2025"
+  },
+  {
+    "id": "128537",
+    "name": "VÕ LÂM TRUYỀN KỲ",
+    "company": "CÔNG TY CỔ PHẦN VNG",
+    "license": "104/QĐ-PTTH&TTĐT",
+    "domain": "http://volam.com.vn/volamtruyenky",
+    "status": "Đang hoạt động",
+    "date": "08/04/2025"
+  },
+  {
+    "id": "128650",
+    "name": "PHONG THẦN",
+    "company": "CÔNG TY CỔ PHẦN VNG",
+    "license": "100/QĐ-PTTH&TTĐT",
+    "domain": "http://pt.vnggames.com",
+    "status": "Đang hoạt động",
+    "date": "04/04/2025"
+  },
+  {
+    "id": "127708",
+    "name": "VÕ LÂM CHI MỘNG",
+    "company": "CÔNG TY CỔ PHẦN VNG",
+    "license": "103/QĐ-PTTH&TTĐT",
+    "domain": "https://vlcm.zing.vn",
+    "status": "Đang hoạt động",
+    "date": "04/04/2025"
+  },
+  {
+    "id": "128543",
+    "name": "VÕ LÂM TRUYỀN KỲ II",
+    "company": "CÔNG TY CỔ PHẦN VNG",
+    "license": "101/QĐ-PTTH&TTĐT",
+    "domain": "http://volam2.vngames.com",
+    "status": "Đang hoạt động",
+    "date": "04/04/2025"
+  },
+  {
+    "id": "128636",
+    "name": "KIẾM THẾ",
+    "company": "CÔNG TY CỔ PHẦN VNG",
+    "license": "102/QĐ-PTTH&TTĐT",
+    "domain": "http://kiemthe.vnggames.com",
+    "status": "Đang hoạt động",
+    "date": "04/04/2025"
+  },
+  {
+    "id": "128221",
+    "name": "VÕ LÂM CHI MỘNG",
+    "company": "CÔNG TY CỔ PHẦN VNG",
+    "license": "103/QĐ-PTTH&TTĐT",
+    "domain": "https://vlcm.zing.vn",
+    "status": "Đang hoạt động",
+    "date": "04/04/2025"
+  },
+  {
+    "id": "75227",
+    "name": "KIẾM MA 3D: VƯƠNG GIẢ CHÍ TÔN",
+    "company": "CÔNG TY CỔ PHẦN FUNTAP",
+    "license": "62 /QĐ-BTTTT",
+    "domain": "http://kiemma3d.playfun.vn",
+    "status": "Đang hoạt động",
+    "date": "01/04/2025"
+  },
+  {
+    "id": "128496",
+    "name": "KIẾM HIỆP AUTO CHESS",
+    "company": "CÔNG TY TNHH SOHA",
+    "license": "84/QĐ-PTTH&TTĐT",
+    "domain": "https://kiemhiepchess.sohagame.vn",
+    "status": "Đang hoạt động",
+    "date": "28/03/2025"
+  },
+  {
+    "id": "75493",
+    "name": "TÂY DU TRUYỀN KỲ",
+    "company": "CÔNG TY CỔ PHẦN TRỰC TUYẾN CMN VIỆT NAM",
+    "license": "66/QĐ-PTTH&TTĐT",
+    "domain": "http://taydu.cmn.vn.",
+    "status": "Đang hoạt động",
+    "date": "27/02/2025"
+  },
+  {
+    "id": "131442",
+    "name": "VONG XUYÊN PHONG HOA LỤC",
+    "company": "CÔNG TY CỔ PHẦN VNG",
+    "license": "53/QĐ-PTTH&TTĐT",
+    "domain": "https://dream.vnggames.com",
+    "status": "Đang hoạt động",
+    "date": "25/02/2025"
+  },
+  {
+    "id": "131723",
+    "name": "TIỂU TUYẾT LĨNH CHỦ",
+    "company": "CÔNG TY TNHH PHẦN MỀM MGOL",
+    "license": "59/QĐ-PTTH&TTĐT",
+    "domain": "https://ttlc.mgol.vn",
+    "status": "Đang hoạt động",
+    "date": "25/02/2025"
+  },
+  {
+    "id": "131721",
+    "name": "PET SAMKOK - BÁO THỦ 3Q",
+    "company": "CÔNG TY TNHH SOHA",
+    "license": "55/QĐ-PTTH&TTĐT",
+    "domain": "https://petsamkok.sohagame.vn",
+    "status": "Đang hoạt động",
+    "date": "25/02/2025"
+  },
+  {
+    "id": "131689",
+    "name": "CHIẾN QUỐC - CLASH OF HAN",
+    "company": "CÔNG TY CỔ PHẦN GIẢI PHÁP SỐ VISION NETWORK VIỆT NAM",
+    "license": "58/QĐ-PTTH&TTĐT",
+    "domain": "https://www.cohan.vn",
+    "status": "Đang hoạt động",
+    "date": "25/02/2025"
+  },
+  {
+    "id": "75522",
+    "name": "BẮN CÁ HẢI THẦN",
+    "company": "CÔNG TY TNHH GAME VIỆT",
+    "license": "60/QĐ-PTTH&TTĐT",
+    "domain": "https://www.bancahaithan.vn",
+    "status": "Đang hoạt động",
+    "date": "25/02/2025"
+  },
+  {
+    "id": "131727",
+    "name": "THỢ SĂN HUYỀN THOẠI",
+    "company": "CÔNG TY TNHH DỊCH VỤ PHẦN MỀM BÌNH MINH",
+    "license": "47/QĐ-PTTH&TTĐT",
+    "domain": "https://goldnglory.vn",
+    "status": "Đang hoạt động",
+    "date": "24/02/2025"
+  },
+  {
+    "id": "131722",
+    "name": "ĐẠI PHÁ THIÊN DU",
+    "company": "CÔNG TY CỔ PHẦN TEPAYLINK",
+    "license": "42/QĐ-PTTH&TTĐT",
+    "domain": "https://www.tantayduky.vn",
+    "status": "Đang hoạt động",
+    "date": "20/02/2025"
+  },
+  {
+    "id": "131701",
+    "name": "PHỤC YÊU SƯ",
+    "company": "CÔNG TY CỔ PHẦN VISION GAME",
+    "license": "38/QĐ-PTTH&TTĐT",
+    "domain": "http://www.phucyeusu.vsgame.vn/",
+    "status": "Đang hoạt động",
+    "date": "18/02/2025"
+  },
+  {
+    "id": "131695",
+    "name": "CỰC TỐC TAM QUỐC",
+    "company": "CÔNG TY CỔ PHẦN PHÁT TRIỂN CÔNG NGHỆ SỐ HỒNG HÀ",
+    "license": "33/QĐ-PTTH&TTĐT",
+    "domain": "https://cuctoctamquoc.hhgame.vn",
+    "status": "Đang hoạt động",
+    "date": "18/02/2025"
+  },
+  {
+    "id": "131713",
+    "name": "YULGANG: TÁI CHIẾN VÕ LÂM",
+    "company": "CÔNG TY CỔ PHẦN VISION GAME",
+    "license": "36/QĐ-PTTH&TTĐT",
+    "domain": "http://www.yulgang.vsgame.vn/",
+    "status": "Đang hoạt động",
+    "date": "18/02/2025"
+  },
+  {
+    "id": "131696",
+    "name": "ĐẠI TIÊN MÌNH ĐI ĐÂU THẾ",
+    "company": "CÔNG TY CỔ PHẦN FUNTAP",
+    "license": "35 /QĐ-PTTH&TTĐT",
+    "domain": "https://www.daitienminhdidauthe.playfun",
+    "status": "Đang hoạt động",
+    "date": "18/02/2025"
+  },
+  {
+    "id": "131729",
+    "name": "CABAL ORIGIN - VTC: HUYỀN THOẠI",
+    "company": "CÔNG TY CỔ PHẦN VTC DỊCH VỤ DI ĐỘNG",
+    "license": "30/QĐ-PTTH&TTĐT",
+    "domain": "https://cabal.vtczone.vn",
+    "status": "Đang hoạt động",
+    "date": "17/02/2025"
+  },
+  {
+    "id": "131830",
+    "name": "THỢ SĂN QUỶ: ĐẠI CHIẾN DỊ GIỚI",
+    "company": "CÔNG TY CỔ PHẦN GAMOTA",
+    "license": "33/QĐ-PTTH&TTĐT",
+    "domain": "https://tsqdigioi.gamota.com/",
+    "status": "Đang hoạt động",
+    "date": "30/01/2025"
+  },
+  {
+    "id": "130698",
+    "name": "GẤU TRÚC TRUYỀN KỲ",
+    "company": "CÔNG TY CỔ PHẦN ĐẦU TƯ CÔNG NGHỆ VISION INVEST",
+    "license": "54/QĐ-BTTTT",
+    "domain": "https://www.gautructruyenky.vn",
+    "status": "Đang hoạt động",
+    "date": "27/01/2025"
+  },
+  {
+    "id": "131464",
+    "name": "CỜ CÁ NGỰA ZINGPLAY",
+    "company": "CÔNG TY TNHH ZINGPLAY VIỆT NAM",
+    "license": "109/QĐ-BTTTT",
+    "domain": "https://cocangua.zingplay.com",
+    "status": "Đang hoạt động",
+    "date": "24/01/2025"
+  },
+  {
+    "id": "131730",
+    "name": "WAR 3 ARENA - LIÊN MINH ANH HÙNG",
+    "company": "CÔNG TY CỔ PHẦN VTC DỊCH VỤ DI ĐỘNG",
+    "license": "14/QĐ-PTTH&TTĐT",
+    "domain": "https://war3arena.vn",
+    "status": "Đang hoạt động",
+    "date": "24/01/2025"
+  },
+  {
+    "id": "128563",
+    "name": "TIẾNG VỌNG TRO TÀN",
+    "company": "CÔNG TY CỔ PHÀN TRAVELLET VIỆT NAM",
+    "license": "107/QĐ-BTTTT",
+    "domain": "https://ashechoes.vn",
+    "status": "Đang hoạt động",
+    "date": "24/01/2025"
+  },
+  {
+    "id": "131160",
+    "name": "CHINH ĐỒ 2 ORIGIN",
+    "company": "CÔNG TY CỔ PHẦN EFUN",
+    "license": "111/QĐ-BTTTT",
+    "domain": "https://www.cdo2.efun.vn",
+    "status": "Đang hoạt động",
+    "date": "24/01/2025"
+  },
+  {
+    "id": "130124",
+    "name": "ĐẠI CHIẾN SẮC MÀU – COLORBANG",
+    "company": "CÔNG TY CỔ PHẦN TẬP ĐOÀN GIẢI TRÍ ĐẠI DƯƠNG",
+    "license": "110/QĐ-BTTTT",
+    "domain": "https://www.colorbang.oeg.vn",
+    "status": "Đang hoạt động",
+    "date": "24/01/2025"
+  },
+  {
+    "id": "129692",
+    "name": "TIẾNG VỌNG TRO TÀN",
+    "company": "CÔNG TY CỔ PHẦN TRAVELLET VIỆT NAM",
+    "license": "107/QĐ-BTTTT",
+    "domain": "https://ashechoes.vn",
+    "status": "Đang hoạt động",
+    "date": "24/01/2025"
+  },
+  {
+    "id": "75541",
+    "name": "TÂN CHÂN LONG",
+    "company": "CÔNG TY CỔ PHẦN TẬP ĐOÀN GIẢI TRÍ ĐẠI DƯƠNG",
+    "license": "136/QĐ-PTTH&TTĐT",
+    "domain": "https://tanchanlong.oeg.vn.",
+    "status": "Đang hoạt động",
+    "date": "21/01/2025"
+  },
+  {
+    "id": "131150",
+    "name": "PHÀM NHÂN NGỰ LINH TRUYỆN",
+    "company": "CÔNG TY CỔ PHẦN TẬP ĐOÀN GIẢI TRÍ ĐẠI DƯƠNG",
+    "license": "82/QĐ-BTTTT",
+    "domain": "https://phamnhan.oeg.vn",
+    "status": "Đang hoạt động",
+    "date": "21/01/2025"
+  },
+  {
+    "id": "128586",
+    "name": "X-WUKONG ĐẠI CHIẾN TAM GIỚI",
+    "company": "CÔNG TY TNHH SOHA",
+    "license": "84/QĐ-BTTTT",
+    "domain": "https://xwukong.sohagame.vn",
+    "status": "Đang hoạt động",
+    "date": "21/01/2025"
+  },
+  {
+    "id": "75236",
+    "name": "TRẤN MA KHÚC MOBILE",
+    "company": "CÔNG TY CỔ PHẦN FUNTAP",
+    "license": "85 /QĐ-BTTTT",
+    "domain": "https://www.tranma.playfun.vn",
+    "status": "Đang hoạt động",
+    "date": "21/01/2025"
+  },
+  {
+    "id": "128454",
+    "name": "DANH TƯỚNG ORIGIN",
+    "company": "CÔNG TY TNHH TRUYỀN THÔNG REDFOX NETWORKS",
+    "license": "83/QĐ-BTTTT",
+    "domain": "https://dto.redfoxgames.vn",
+    "status": "Đang hoạt động",
+    "date": "21/01/2025"
+  },
+  {
+    "id": "129165",
+    "name": "TRẤN MA KHÚC MOBILE",
+    "company": "CÔNG TY CỔ PHẦN FUNTAP",
+    "license": "85/QĐ-BTTTT",
+    "domain": "https://www.tranma.playfun.vn.",
+    "status": "Đang hoạt động",
+    "date": "21/01/2025"
+  },
+  {
+    "id": "128166",
+    "name": "TAM ANH 3Q",
+    "company": "CÔNG TY TNHH GZONE MEDIA VIỆT NAM",
+    "license": "87/QĐ-BTTTT",
+    "domain": "https://ta3q.zoneplay.vn",
+    "status": "Đang hoạt động",
+    "date": "21/01/2025"
+  },
+  {
+    "id": "131470",
+    "name": "SROM - HUYỀN THOẠI LỮ KHÁCH",
+    "company": "CÔNG TY CỔ PHẦN CÔNG NGHỆ GAMZ",
+    "license": "93/QĐ-BTTTT",
+    "domain": "https://www.huyenthoailukhach.gamz.vn, www.srom.gamz.vn",
+    "status": "Đang hoạt động",
+    "date": "21/01/2025"
+  },
+  {
+    "id": "129632",
+    "name": "Cờ Vua Online",
+    "company": "CÔNG TY TNHH ZINGPLAY VIỆT NAM",
+    "license": "69/QĐ-BTTTT",
+    "domain": "https://covua.boardcraftonline.vn",
+    "status": "Đang hoạt động",
+    "date": "17/01/2025"
+  },
+  {
+    "id": "128246",
+    "name": "THIẾU NỮ SCARLET",
+    "company": "CÔNG TY CỔ PHẦN ĐẦU TƯ CÔNG NGHỆ VISION INVEST",
+    "license": "63/QĐ-BTTTT",
+    "domain": "https://www.scarletgirls.vn",
+    "status": "Đang hoạt động",
+    "date": "17/01/2025"
+  },
+  {
+    "id": "128086",
+    "name": "FANTASTIC BEASTS – RPG NHÀN RỖI",
+    "company": "CÔNG TY CỔ PHẦN TRAVELLET VIỆT NAM",
+    "license": "53/QĐ-BTTTT",
+    "domain": "http://game.travellet.vn/tkh",
+    "status": "Đang hoạt động",
+    "date": "17/01/2025"
+  },
+  {
+    "id": "128564",
+    "name": "THIẾU NỮ SCARLET",
+    "company": "CÔNG TY CỔ PHẦN ĐẦU TƯ CÔNG NGHỆ VISION INVEST",
+    "license": "63/QĐ-BTTTT",
+    "domain": "https://www.scarletgirls.vn",
+    "status": "Đang hoạt động",
+    "date": "17/01/2025"
+  },
+  {
+    "id": "128399",
+    "name": "X-PIRATES: TÂN THẾ GIỚI",
+    "company": "CÔNG TY CỔ PHẦN GZONE MEDIA VIỆT NAM",
+    "license": "56/QĐ-BTTTT",
+    "domain": "http://tanthegioi.zoneplay.vn",
+    "status": "Đang hoạt động",
+    "date": "17/01/2025"
+  },
+  {
+    "id": "128923",
+    "name": "KIẾM THẦN LÀ TA",
+    "company": "CÔNG TY CỔ PHẦN TRUYỀN HÌNH TƯƠNG TÁC VIỆT NAM",
+    "license": "51/QĐ-BTTTT",
+    "domain": "http://kiemthan.vplay.vn",
+    "status": "Đang hoạt động",
+    "date": "17/01/2025"
+  },
+  {
+    "id": "131342",
+    "name": "LIÊN MINH CHIẾN HẠM: TAM CỰC",
+    "company": "CÔNG TY CỔ PHẦN GZONE MEDIA VIỆT NAM",
+    "license": "67/QĐ-BTTTT",
+    "domain": "http://lmch.zoneplay.vn",
+    "status": "Đang hoạt động",
+    "date": "17/01/2025"
+  },
+  {
+    "id": "129045",
+    "name": "TÂN ĐẤU LA ĐẠI LỤC",
+    "company": "CÔNG TY TNHH TRÒ CHƠI MỘC",
+    "license": "64/QĐ-BTTTT",
+    "domain": "http://tdldl.mocgame.vn",
+    "status": "Đang hoạt động",
+    "date": "17/01/2025"
+  },
+  {
+    "id": "130680",
+    "name": "X-FISH: GACHA ĐÃ TAY",
+    "company": "CÔNG TY CỔ PHẦN FUNTAP",
+    "license": "52/QĐ-BTTTT",
+    "domain": "https://langcadaichien.vn",
+    "status": "Đang hoạt động",
+    "date": "17/01/2025"
+  },
+  {
+    "id": "130006",
+    "name": "THANH VÂN MOBILE",
+    "company": "CÔNG TY CỔ PHẦN FGSTUDIO",
+    "license": "65/QĐ-BTTTT",
+    "domain": "https://www.thanhvan.fgstudio.vn",
+    "status": "Đang hoạt động",
+    "date": "17/01/2025"
+  },
+  {
+    "id": "128243",
+    "name": "GO GO SAMKOK - 3Q: THÀNH CHỦ TIỂU DAO",
+    "company": "CÔNG TY CỔ PHẦN GIẢI TRÍ THIÊN THƯỢNG HỎA",
+    "license": "55/QĐ-BTTTT",
+    "domain": "https://gogosamkoktth.vn",
+    "status": "Đang hoạt động",
+    "date": "17/01/2025"
+  },
+  {
+    "id": "129135",
+    "name": "THỊ TRẤN VUI VẺ",
+    "company": "CÔNG TY TNHH ZINGPLAY VIỆT NAM",
+    "license": "70/QĐ-BTTTT",
+    "domain": "https://tinklematch.boardcraftonline.vn",
+    "status": "Đang hoạt động",
+    "date": "17/01/2025"
+  },
+  {
+    "id": "129060",
+    "name": "HỌC VIỆN HUYỀN THOẠI",
+    "company": "CÔNG TY TNHH VMGE",
+    "license": "66/QĐ-BTTTT",
+    "domain": "https://www.hocvienhuyenthoai.vn",
+    "status": "Đang hoạt động",
+    "date": "17/01/2025"
+  },
+  {
+    "id": "127665",
+    "name": "MẬT VỤ CỦ QUẢ",
+    "company": "CÔNG TY TNHH ZINGPLAY VIỆT NAM",
+    "license": "71/QĐ-BTTTT",
+    "domain": "https://matvucuqua.boardcraftonline.vn",
+    "status": "Đang hoạt động",
+    "date": "17/01/2025"
+  }
+]

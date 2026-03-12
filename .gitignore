@@ -1,0 +1,39 @@
+# Environment
+.env
+.venv/
+__pycache__/
+
+# Dependencies
+node_modules/
+package-lock.json
+
+# Data files
+data.json
+data_temp.json
+monitor_state.json
+watch_list.json
+
+# Logs
+*.log
+*.log.*
+
+# Debug/temp files
+full_page.html
+site_structure.html
+rsc_response.txt
+detail_rsc.txt
+page.js
+nppa_data.json
+nppa_detail.html
+nppa_list.html
+
+# Binaries
+llmfit.exe
+
+# Temp artifacts
+infographic_temp.png
+ai_news_output.json
+
+# IDE
+.vscode/
+.idea/
