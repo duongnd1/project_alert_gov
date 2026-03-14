@@ -57,9 +57,13 @@ CHECK_INTERVAL = int(os.getenv("CHECK_INTERVAL_MINUTES", 360))
 STATE_FILE = "monitor_state.json"
 DATA_FILE = "data.json"
 WATCH_FILE = "watch_list.json"
+AFKMOBI_DATA_FILE = "afkmobi_data.json"
+AFKMOBI_ALERT_STATE_FILE = "afkmobi_alert_state.json"
 
 # In-memory database
 game_database = []
+afkmobi_database = []
+afkmobi_alert_state = {}
 
 if not BOT_TOKEN:
     logging.error("TELEGRAM_BOT_TOKEN is missing!")
@@ -82,6 +86,43 @@ def load_database():
     else:
         logging.warning("data.json not found. Database empty.")
         game_database = []
+
+def load_afkmobi_database():
+    """Loads afkmobi_data.json into memory."""
+    global afkmobi_database
+    if os.path.exists(AFKMOBI_DATA_FILE):
+        try:
+            with open(AFKMOBI_DATA_FILE, 'r', encoding='utf-8') as f:
+                afkmobi_database = json.load(f)
+            logging.info(f"Loaded {len(afkmobi_database)} AFKMobi games into memory.")
+        except Exception as e:
+            logging.error(f"Error loading AFKMobi database: {e}")
+            afkmobi_database = []
+    else:
+        logging.warning("afkmobi_data.json not found. AFKMobi database empty.")
+        afkmobi_database = []
+
+def load_afkmobi_alert_state():
+    """Loads afkmobi_alert_state.json into memory."""
+    global afkmobi_alert_state
+    if os.path.exists(AFKMOBI_ALERT_STATE_FILE):
+        try:
+            with open(AFKMOBI_ALERT_STATE_FILE, 'r', encoding='utf-8') as f:
+                afkmobi_alert_state = json.load(f)
+            logging.info(f"Loaded AFKMobi alert state for {len(afkmobi_alert_state)} games.")
+        except Exception as e:
+            logging.error(f"Error loading AFKMobi alert state: {e}")
+            afkmobi_alert_state = {}
+    else:
+        afkmobi_alert_state = {}
+
+def save_afkmobi_alert_state():
+    """Saves afkmobi_alert_state to disk."""
+    try:
+        with open(AFKMOBI_ALERT_STATE_FILE, 'w', encoding='utf-8') as f:
+            json.dump(afkmobi_alert_state, f, indent=2, ensure_ascii=False)
+    except Exception as e:
+        logging.error(f"Error saving AFKMobi alert state: {e}")
 
 def load_watchlist():
     """Loads watch_list.json into memory."""
@@ -194,9 +235,7 @@ def send_welcome(message):
     help_text = (
         "🤖 *Website Monitor Bot*\n\n"
         "I am monitoring `giayphep.abei.gov.vn` for you.\n\n"
-        "Commands:\n"
-        "• /check - Force a check right now\n"
-        "• /status - Confirm I am running\n"
+        "📜 *Giấy phép:*\n"
         "• /search <keyword> - Tìm game theo tên, công ty, domain...\n"
         "• /searchdate <keyword> <từ> <đến> - Tìm theo khoảng thời gian\n"
         "• /license <số> - Tìm theo số giấy phép\n"
@@ -205,7 +244,14 @@ def send_welcome(message):
         "• /week - Báo cáo tuần\n"
         "• /month - Báo cáo tháng\n"
         "• /scrape - Quick check game mới\n"
-        "• /fullscrape - Crawl toàn bộ (merge, ~20p)\n"
+        "• /fullscrape - Crawl toàn bộ (merge, ~20p)\n\n"
+        "🎮 *AFKMobi (Game sắp ra mắt):*\n"
+        "• /afk\\_upcoming - Game sắp ra mắt\n"
+        "• /afk\\_search <keyword> - Tìm game AFKMobi\n"
+        "• /afk\\_scrape - Quét dữ liệu AFKMobi\n\n"
+        "⚙️ *Khác:*\n"
+        "• /check - Kiểm tra website\n"
+        "• /status - Trạng thái bot\n"
         "• /backup - Xem/Restore backup\n"
         "• /stats - Thống kê database\n\n"
         "💡 *Mẹo:* `/searchdate Tam Quốc 01/01/2026 15/02/2026`"
@@ -828,6 +874,181 @@ def scrape_handle(message):
     daily_scrape()
     bot.send_message(message.chat.id, f"✅ Hoàn tất! Database hiện có {len(game_database)} game.")
 
+# ============================================================
+# AFKMOBI — Game Sắp Ra Mắt (Scraper & Commands)
+# ============================================================
+
+def afkmobi_quick_check():
+    """Scheduled task: check AFKMobi for new upcoming games."""
+    try:
+        old_count = len(afkmobi_database)
+        result = subprocess.run(
+            [sys.executable, "scraper_afkmobi.py", "--quick"],
+            check=True, timeout=60, capture_output=True, text=True
+        )
+        logging.info(f"AFKMobi quick check output: {result.stdout.strip()}")
+        load_afkmobi_database()
+        new_count = len(afkmobi_database)
+        diff = new_count - old_count
+        if diff > 0:
+            new_games = afkmobi_database[:diff]
+            games_info = ""
+            for g in new_games:
+                name = g.get('name', 'Game')
+                genre = g.get('genre', 'N/A')
+                url = g.get('url', '')
+                date_str = g.get('release_date', 'N/A')
+                
+                # Parse date for display
+                def _fmt_date(s):
+                    s = re.sub(r'^[Tt]h\u00e1ng\s+', '', s)
+                    # Check for full date or month only
+                    for fmt in ["%d-%m-%Y %H:%M", "%d-%m-%Y"]:
+                        try: return datetime.strptime(s, fmt).strftime("%d/%m/%Y")
+                        except: continue
+                    try: return datetime.strptime(s, "%m-%Y").strftime("%m/%Y")
+                    except: return s
+
+                date_display = _fmt_date(date_str)
+                
+                games_info += (
+                    f"🎮 *Tên game:* {name}\n\n"
+                    f"🏷️ *Thể loại:* {genre}\n\n"
+                    f"📅 *Dự kiến:* {date_display}\n\n"
+                    f"🔗 *Link:* [tại đây]({url})\n\n"
+                    f"━━━━━━━━━━━━━━━━━━━━\n\n"
+                )
+                
+            send_message(
+                f"🔥 *{diff} GAME MỚI SẮP RA MẮT!*\n"
+                f"━━━━━━━━━━━━━━━━━━━━\n\n"
+                f"{games_info}"
+                f"📊 _Tổng cộng {new_count} game trong database._"
+            )
+            logging.info(f"AFKMobi ALERT: {diff} new games. Total: {new_count}")
+        else:
+            logging.info(f"AFKMobi: No new games. Total: {new_count}")
+    except subprocess.TimeoutExpired:
+        logging.error("AFKMobi quick check timed out.")
+    except Exception as e:
+        logging.error(f"AFKMobi quick check error: {e}")
+
+@bot.message_handler(commands=['afk_upcoming'])
+def afk_upcoming_handle(message):
+    """Show upcoming games sorted by release date."""
+    if not afkmobi_database:
+        load_afkmobi_database()
+    if not afkmobi_database:
+        bot.reply_to(message, "⚠️ AFKMobi database trống. Dùng /afk\\_scrape để quét dữ liệu.", parse_mode="Markdown")
+        return
+    
+    now = datetime.now()
+    upcoming = []
+    for g in afkmobi_database:
+        try:
+            dt = datetime.strptime(g.get('release_date', ''), "%d-%m-%Y %H:%M")
+            if dt >= now:
+                upcoming.append((dt, g))
+        except (ValueError, TypeError):
+            continue
+    
+    upcoming.sort(key=lambda x: x[0])
+    
+    if not upcoming:
+        # Show latest games instead
+        bot.reply_to(message, "📅 Không có game nào sắp ra mắt. Hiển thị 10 game gần nhất:")
+        upcoming = []
+        for g in afkmobi_database[:10]:
+            try:
+                dt = datetime.strptime(g.get('release_date', ''), "%d-%m-%Y %H:%M")
+                upcoming.append((dt, g))
+            except (ValueError, TypeError):
+                upcoming.append((datetime.min, g))
+    
+    response = "📅 *GAME SẮP RA MẮT:*\n\n"
+    for i, (dt, g) in enumerate(upcoming[:15], 1):
+        date_display = dt.strftime("%d/%m/%Y") if dt != datetime.min else "N/A"
+        # Calculate days until release
+        days_left = (dt - now).days if dt > now else 0
+        countdown = f" (⏳ {days_left} ngày)" if days_left > 0 else " (✅ Đã ra mắt)"
+        
+        name = g.get('name', '?').replace('*', '')
+        response += (
+            f"{i}. *{name}*{countdown}\n"
+            f"   🏷️ {g.get('genre', 'N/A')}\n"
+            f"   📅 {date_display}\n"
+            f"   🔗 [tại đây]({g.get('url', '')})\n"
+            f"──────────────\n"
+        )
+    
+    response += f"\n_Tổng: {len(afkmobi_database)} game mới_"
+    bot.send_message(message.chat.id, response, parse_mode="Markdown", disable_web_page_preview=True)
+
+@bot.message_handler(commands=['afk_search'])
+def afk_search_handle(message):
+    """Search AFKMobi games by keyword."""
+    query = message.text.replace("/afk_search", "").strip().lower()
+    if not query:
+        bot.reply_to(message, "Nhập từ khóa. Ví dụ: `/afk\\_search Tam Quốc`", parse_mode="Markdown")
+        return
+    if not afkmobi_database:
+        load_afkmobi_database()
+    if not afkmobi_database:
+        bot.reply_to(message, "⚠️ AFKMobi database trống. Dùng /afk\\_scrape để quét.", parse_mode="Markdown")
+        return
+    
+    results = [
+        g for g in afkmobi_database
+        if (query in g.get('name', '').lower() or
+            query in g.get('genre', '').lower())
+    ]
+    
+    if not results:
+        bot.reply_to(message, f"❌ Không tìm thấy game cho '{query}'.")
+        return
+    
+    response = f"✅ Tìm thấy *{len(results)}* game cho *{query}*:\n\n"
+    for g in results[:20]:
+        name = g.get('name', '?').replace('*', '')
+        date_str = g.get('release_date', 'N/A')
+        try:
+            dt = datetime.strptime(date_str, "%d-%m-%Y %H:%M")
+            date_display = dt.strftime("%d/%m/%Y")
+        except (ValueError, TypeError):
+            date_display = date_str
+        response += (
+            f"🎮 *{name}*\n"
+            f"🏷️ {g.get('genre', 'N/A')}\n"
+            f"📅 {date_display}\n"
+            f"🔗 [tại đây]({g.get('url', '')})\n"
+            f"──────────────\n"
+        )
+    bot.send_message(message.chat.id, response, parse_mode="Markdown", disable_web_page_preview=True)
+
+@bot.message_handler(commands=['afk_scrape'])
+def afk_scrape_handle(message):
+    """Manually trigger AFKMobi scrape."""
+    bot.reply_to(message, "🔄 Đang quét dữ liệu game mới...")
+    
+    def run_afk_scrape():
+        try:
+            result = subprocess.run(
+                [sys.executable, "scraper_afkmobi.py"],
+                check=True, timeout=300, capture_output=True, text=True
+            )
+            load_afkmobi_database()
+            bot.send_message(
+                message.chat.id,
+                f"✅ *Quét dữ liệu hoàn tất!*\n\n"
+                f"🎮 Tổng: *{len(afkmobi_database)}* game sắp ra mắt.",
+                parse_mode="Markdown"
+            )
+        except Exception as e:
+            bot.send_message(message.chat.id, f"❌ Lỗi quét AFKMobi: {e}")
+    
+    threading.Thread(target=run_afk_scrape, daemon=True).start()
+
+
 # --- Backup & Full Scrape Commands ---
 
 
@@ -945,13 +1166,157 @@ def fullscrape_callback(call):
 
 # --- Threading ---
 
+def check_afk_milestones():
+    """Evaluate all AFKMobi games for milestone alerts (30, 15, 7, 0 days)."""
+    logging.info("Checking AFKMobi milestones...")
+    load_afkmobi_database()
+    load_afkmobi_alert_state()
+    
+    now = datetime.now()
+    today = now.date()
+    
+    for g in afkmobi_database:
+        gid = g.get("id")
+        if not gid: continue
+        
+        release_date_str = g.get("release_date", "")
+        is_approx = g.get("is_approximate", False)
+        
+        # Helper to parse the custom format
+        def _parse(s):
+            s = re.sub(r'^[Tt]h\u00e1ng\s+', '', s)
+            for fmt in ["%d-%m-%Y %H:%M", "%d-%m-%Y", "%m-%Y"]:
+                try: return datetime.strptime(s, fmt)
+                except: continue
+            return None
+            
+        dt = _parse(release_date_str)
+        if not dt: continue
+        
+        target_date = dt.date()
+        sent_milestones = afkmobi_alert_state.get(gid, [])
+        
+        if not is_approx:
+            # Specific Date Alert Logic
+            days_left = (target_date - today).days
+            milestone = None
+            if days_left == 30: milestone = "30_days"
+            elif days_left == 15: milestone = "15_days"
+            elif days_left == 7: milestone = "7_days"
+            elif days_left == 0: milestone = "release_day"
+            
+            if milestone and milestone not in sent_milestones:
+                send_afk_milestone_alert(g, milestone, days_left)
+                sent_milestones.append(milestone)
+                afkmobi_alert_state[gid] = sent_milestones
+        else:
+            # Month-only Alert Logic
+            if today.year == target_date.year and today.month == target_date.month:
+                milestone = None
+                if today.day == 1: milestone = "month_1st"
+                elif today.day == 7: milestone = "month_7th"
+                elif today.day == 15: milestone = "month_15th"
+                
+                if milestone and milestone not in sent_milestones:
+                    send_afk_milestone_alert(g, milestone, month_milestone=today.day)
+                    sent_milestones.append(milestone)
+                    afkmobi_alert_state[gid] = sent_milestones
+
+    save_afkmobi_alert_state()
+
+def send_afk_milestone_alert(game, milestone_type, days_left=None, month_milestone=None):
+    """Format and send the specific milestone message."""
+    name = game.get("name", "Game")
+    genre = game.get("genre", "N/A")
+    tags = ", ".join(game.get("status_tags", []))
+    date_display = game.get("release_date", "N/A")
+    desc = game.get("description", "")
+    url = game.get("url", "")
+    
+    msg = ""
+    if milestone_type == "30_days":
+        msg = (
+            f"🗓 *[30 NGÀY] GAME SẮP RA MẮT!*\n"
+            f"━━━━━━━━━━━━━━━━━━━━\n\n"
+            f"🎮 *Tên game:* {name}\n\n"
+            f"🏷️ *Thể loại:* {genre}\n\n"
+            f"🏳️ *Trạng thái:* {tags}\n\n"
+            f"📅 *Ngày ra mắt:* {date_display}\n\n"
+            f"📝 *Mô tả:* {desc}\n\n"
+            f"━━━━━━━━━━━━━━━━━━━━\n\n"
+            f"🔗 *Link:* [tại đây]({url})\n\n"
+            f"📍 _Cột mốc 1 tháng! Hãy sẵn sàng cho hành trình mới._"
+        )
+    elif milestone_type == "15_days":
+        msg = (
+            f"⏳ *[15 NGÀY] CHUẨN BỊ CHIẾN GAME!*\n"
+            f"━━━━━━━━━━━━━━━━━━━━\n\n"
+            f"🎮 *Tên game:* {name}\n\n"
+            f"🏷️ *Thể loại:* {genre}\n\n"
+            f"🏳️ *Trạng thái:* {tags}\n\n"
+            f"📅 *Ngày ra mắt:* {date_display}\n\n"
+            f"📝 *Mô tả:* {desc}\n\n"
+            f"━━━━━━━━━━━━━━━━━━━━\n\n"
+            f"🔗 *Link:* [tại đây]({url})\n\n"
+            f"📍 _Chỉ còn 15 ngày nữa thôi!_"
+        )
+    elif milestone_type == "7_days":
+        msg = (
+            f"🔥 *[7 NGÀY] ĐẾM NGƯỢC CUỐI CÙNG!*\n"
+            f"━━━━━━━━━━━━━━━━━━━━\n\n"
+            f"🎮 *Tên game:* {name}\n\n"
+            f"🏷️ *Thể loại:* {genre}\n\n"
+            f"🏳️ *Trạng thái:* {tags}\n\n"
+            f"📅 *Ngày ra mắt:* {date_display}\n\n"
+            f"📝 *Mô tả:* {desc}\n\n"
+            f"━━━━━━━━━━━━━━━━━━━━\n\n"
+            f"🔗 *Link:* [tại đây]({url})\n\n"
+            f"📍 _Sẵn sàng bộ nhớ và kết nối, game sẽ ra mắt sau 1 tuần!_"
+        )
+    elif milestone_type == "release_day":
+        msg = (
+            f"🚀 *[HÔM NAY] GAME CHÍNH THỨC RA MẮT!*\n"
+            f"━━━━━━━━━━━━━━━━━━━━\n\n"
+            f"🎮 *Tên game:* {name}\n\n"
+            f"🏷️ *Thể loại:* {genre}\n\n"
+            f"🏳️ *Trạng thái:* {tags}\n\n"
+            f"📅 *Ngày ra mắt:* HÔM NAY ({date_display})\n\n"
+            f"━━━━━━━━━━━━━━━━━━━━\n\n"
+            f"🔗 *Tải game:* [tại đây]({url})\n\n"
+            f"📍 _Chào mừng bạn đến với thế giới của {name}!_"
+        )
+    elif milestone_type.startswith("month_"):
+        # target_date is passed from check_afk_milestones context implicitly 
+        # but let's just use the game's release_date string cleaned up
+        s = re.sub(r'^[Tt]h\u00e1ng\s+', '', date_display)
+        msg = (
+            f"🗓 *[NHẮC LỊCH] GAME TRONG THÁNG {s}!*\n"
+            f"━━━━━━━━━━━━━━━━━━━━\n\n"
+            f"🎮 *Tên game:* {name}\n\n"
+            f"🏷️ *Thể loại:* {genre}\n\n"
+            f"📅 *Dự kiến:* Tháng {s}\n\n"
+            f"📝 *Mô tả:* {desc}\n\n"
+            f"━━━━━━━━━━━━━━━━━━━━\n\n"
+            f"🔗 *Link:* [tại đây]({url})\n\n"
+            f"📍 _Hôm nay là ngày {month_milestone}! Đừng quên theo dõi tin tức về game._"
+        )
+
+    if msg:
+        send_message(msg)
+
 def scheduler_thread():
     """Runs the schedule loop in a separate thread."""
     # Check for new games twice daily: morning + evening
     schedule.every().day.at("08:00").do(daily_scrape)
     schedule.every().day.at("18:00").do(daily_scrape)
-    # Reload database from disk every hour
+    # AFKMobi: check twice daily (offset from gov check)
+    schedule.every().day.at("09:00").do(afkmobi_quick_check)
+    schedule.every().day.at("19:00").do(afkmobi_quick_check)
+    # AFKMobi: Milestone alerts daily at 07:00
+    schedule.every().day.at("07:00").do(check_afk_milestones)
+    # Reload databases from disk every hour
     schedule.every(1).hours.do(load_database)
+    schedule.every(1).hours.do(load_afkmobi_database)
     # Weekly report every Monday at 08:30 AM
     schedule.every().monday.at("08:30").do(send_weekly_report)
     # Monthly report on 1st of each month at 09:00 AM
@@ -977,6 +1342,9 @@ def main():
         types.BotCommand("week", "📊 Báo cáo tuần"),
         types.BotCommand("month", "📊 Báo cáo tháng"),
         types.BotCommand("trend", "📈 Xu hướng cấp phép theo tháng"),
+        types.BotCommand("afk_upcoming", "🎮 Game sắp ra mắt (AFKMobi)"),
+        types.BotCommand("afk_search", "🔍 Tìm game AFKMobi"),
+        types.BotCommand("afk_scrape", "🔄 Quét AFKMobi"),
         types.BotCommand("watch", "🔔 Theo dõi công ty"),
         types.BotCommand("unwatch", "🗑 Bỏ theo dõi công ty"),
         types.BotCommand("watchlist", "📋 Danh sách đang theo dõi"),
@@ -988,17 +1356,21 @@ def main():
     ])
     logging.info("Bot command menu registered.")
     
-    # Load Database first
+    # Load Databases
     load_database()
+    load_afkmobi_database()
+    load_afkmobi_alert_state()
     
     # Start Scheduler
     t = threading.Thread(target=scheduler_thread, daemon=True)
     t.start()
     
-    # Run quick check immediately on startup to catch anything missed
-    logging.info("Startup: Running quick check for missed games...")
+    # Run quick checks immediately on startup to catch anything missed
+    logging.info("Startup: Running quick checks for missed games...")
     startup_thread = threading.Thread(target=daily_scrape, daemon=True)
     startup_thread.start()
+    afk_startup = threading.Thread(target=afkmobi_quick_check, daemon=True)
+    afk_startup.start()
     
     # Start Bot Polling (Blocking)
     try:

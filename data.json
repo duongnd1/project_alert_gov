@@ -1,5 +1,59 @@
 [
   {
+    "id": "131927",
+    "name": "THỊ TRẤN VUI VẺ",
+    "company": "Công ty TNHH ZingPlay Việt Nam",
+    "license": "126/QĐ-PTTH&TTĐT",
+    "domain": "https://tinklematch.boardcraftonline.vn",
+    "status": "Đang hoạt động",
+    "date": "12/03/2026"
+  },
+  {
+    "id": "131925",
+    "name": "CỜ VUA ONLINE",
+    "company": "Công ty TNHH ZingPlay Việt Nam",
+    "license": "125/QĐ-PTTH&TTĐT",
+    "domain": "https://covua.boardcraftonline.vn",
+    "status": "Đang hoạt động",
+    "date": "12/03/2026"
+  },
+  {
+    "id": "131928",
+    "name": "THỢ RÈN VĨ ĐẠI",
+    "company": "Công ty TNHH ZingPlay Việt Nam",
+    "license": "128/QĐ-PTTH&TTĐT",
+    "domain": "https://blacksmith.boardcraftonline.vn",
+    "status": "Đang hoạt động",
+    "date": "12/03/2026"
+  },
+  {
+    "id": "131926",
+    "name": "NGƯ CHIẾN ZINGPLAY",
+    "company": "Công ty TNHH ZingPlay Việt Nam",
+    "license": "127/QĐ-PTTH&TTĐT",
+    "domain": "https://myfish.zingplay.com",
+    "status": "Đang hoạt động",
+    "date": "12/03/2026"
+  },
+  {
+    "id": "131924",
+    "name": "CỜ CÁ NGỰA ZINGPLAY",
+    "company": "Công ty TNHH ZingPlay Việt Nam",
+    "license": "129/QĐ-PTTH&TTĐT",
+    "domain": "https://cocangua.zingplay.com",
+    "status": "Đang hoạt động",
+    "date": "12/03/2026"
+  },
+  {
+    "id": "131923",
+    "name": "7 ĐẾ CHẾ",
+    "company": "Công ty TNHH ZingPlay Việt Nam",
+    "license": "124/QĐ-PTTH&TTĐT",
+    "domain": "https://7empires.boardcraftonline.vn",
+    "status": "Đang hoạt động",
+    "date": "12/03/2026"
+  },
+  {
     "id": "131908",
     "name": "HIỆP KHÁCH TRỖI DẬY",
     "company": "CÔNG TY TNHH CÔNG NGHỆ MẠNG AT",

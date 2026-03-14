@@ -12,6 +12,7 @@ data.json
 data_temp.json
 monitor_state.json
 watch_list.json
+afkmobi_data.json
 
 # Logs
 *.log
