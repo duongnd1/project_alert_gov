@@ -81,17 +81,49 @@ def merge_data(existing_data, new_data):
 
 def create_driver():
     """Creates a new Chrome driver instance."""
-    chrome_install = ChromeDriverManager().install()
-    folder_name = os.path.dirname(chrome_install)
-    chromedriver_path = os.path.join(folder_name, "chromedriver.exe")
-    
     chrome_options = Options()
     chrome_options.add_argument("--headless")
     chrome_options.add_argument("--disable-gpu")
     chrome_options.add_argument("--no-sandbox")
+    chrome_options.add_argument("--disable-dev-shm-usage")
     chrome_options.add_argument("--log-level=3")
     
-    service = Service(chromedriver_path)
+    # Check for Chromium in common Linux paths if on Linux
+    if os.name != 'nt':
+        linux_chrome_paths = [
+            "/usr/bin/chromium-browser",
+            "/usr/bin/chromium",
+            "/snap/bin/chromium",
+            "/usr/bin/google-chrome"
+        ]
+        for path in linux_chrome_paths:
+            if os.path.exists(path):
+                chrome_options.binary_location = path
+                logging.info(f"Using Chrome binary at: {path}")
+                break
+
+    try:
+        # Try using webdriver_manager first
+        chrome_install = ChromeDriverManager().install()
+        # On Windows, it might need .exe, but wdm usually handles it. 
+        # The original code was forcing .exe, which we'll only do on Windows if it's missing.
+        if os.name == 'nt' and not chrome_install.lower().endswith(".exe"):
+            folder_name = os.path.dirname(chrome_install)
+            chromedriver_path = os.path.join(folder_name, "chromedriver.exe")
+        else:
+            chromedriver_path = chrome_install
+            
+        service = Service(chromedriver_path)
+    except Exception as e:
+        logging.warning(f"WebDriverManager failed: {e}. Falling back to system chromedriver.")
+        # Fallback for Linux: use absolute path
+        if os.name != 'nt' and os.path.exists("/usr/bin/chromedriver"):
+            service = Service("/usr/bin/chromedriver")
+        elif os.name != 'nt':
+            service = Service("chromedriver")
+        else:
+            raise e
+
     driver = webdriver.Chrome(service=service, options=chrome_options)
     driver.set_page_load_timeout(30)
     return driver

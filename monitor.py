@@ -35,15 +35,27 @@ stream_handler.setFormatter(log_formatter)
 root_logger.addHandler(stream_handler)
 
 # --- SINGLE INSTANCE LOCK ---
-import msvcrt
+import os
+import sys
 lock_file_path = "alert_gov.lock"
-# Keep file open for the lifetime of the process
-lock_file_fd = open(lock_file_path, "w")
-try:
-    msvcrt.locking(lock_file_fd.fileno(), msvcrt.LK_NBLCK, 1)
-except IOError:
-    logging.error("Another instance of monitor.py is already running. Exiting to prevent 409 Conflict...")
-    sys.exit(1)
+
+# Cross-platform file locking
+if os.name == 'nt':
+    import msvcrt
+    lock_file_fd = open(lock_file_path, "w")
+    try:
+        msvcrt.locking(lock_file_fd.fileno(), msvcrt.LK_NBLCK, 1)
+    except IOError:
+        logging.error("Another instance of monitor.py is already running. Exiting...")
+        sys.exit(1)
+else:
+    import fcntl
+    lock_file_fd = open(lock_file_path, "w")
+    try:
+        fcntl.flock(lock_file_fd, fcntl.LOCK_EX | fcntl.LOCK_NB)
+    except IOError:
+        logging.error("Another instance of monitor.py is already running. Exiting...")
+        sys.exit(1)
 # ----------------------------
 
 # Load environment variables
