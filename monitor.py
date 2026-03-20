@@ -1382,9 +1382,8 @@ def scheduler_thread():
     schedule.every().day.at("19:00").do(afkmobi_quick_check)
     # AFKMobi: Milestone alerts daily at 07:00
     schedule.every().day.at("07:00").do(check_afk_milestones)
-    # Facebook Apify: scan daily at 10:00 and 20:00
+    # Facebook Apify: scan daily at 10:00
     schedule.every().day.at("10:00").do(fb_apify_scan)
-    schedule.every().day.at("20:00").do(fb_apify_scan)
     # Reload databases from disk every hour
     schedule.every(1).hours.do(load_database)
     schedule.every(1).hours.do(load_afkmobi_database)
