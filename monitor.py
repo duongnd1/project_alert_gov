@@ -1316,6 +1316,62 @@ def send_afk_milestone_alert(game, milestone_type, days_left=None, month_milesto
     if msg:
         send_message(msg)
 
+# ============================================================
+# FACEBOOK APIFY — Trinh Sát (Scraper & Commands)
+# ============================================================
+
+def fb_apify_scan():
+    """Scheduled task: run FB Apify scraper to detect member spikes."""
+    try:
+        result = subprocess.run(
+            [sys.executable, "scraper_fb_apify.py"],
+            check=True, timeout=300, capture_output=True, text=True
+        )
+        logging.info(f"FB Apify scan output: {result.stdout.strip()}")
+    except subprocess.TimeoutExpired:
+        logging.error("FB Apify scan timed out (5 min limit).")
+    except Exception as e:
+        logging.error(f"FB Apify scan error: {e}")
+
+@bot.message_handler(commands=['fb_scan'])
+def fb_scan_handle(message):
+    """Manually trigger FB Apify scan."""
+    bot.reply_to(message, "🔍 Đang quét Facebook qua Apify... (có thể mất vài phút)")
+    fb_apify_scan()
+    bot.send_message(message.chat.id, "✅ Quét Facebook hoàn tất! Nếu có tăng đột biến, bot sẽ thông báo.")
+
+@bot.message_handler(commands=['fb_list'])
+def fb_list_handle(message):
+    """Show the Facebook watch list."""
+    try:
+        fb_data = []
+        if os.path.exists("fb_watch_list.json"):
+            with open("fb_watch_list.json", 'r', encoding='utf-8') as f:
+                fb_data = json.load(f)
+    except Exception as e:
+        bot.reply_to(message, f"❌ Lỗi đọc fb_watch_list.json: {e}")
+        return
+    
+    if not fb_data:
+        bot.reply_to(message, "📋 Danh sách theo dõi Facebook đang trống.")
+        return
+    
+    response = "📋 *DANH SÁCH TRINH SÁT FACEBOOK:*\n\n"
+    for i, entry in enumerate(fb_data, 1):
+        name = entry.get('game_name', '?')
+        fb_type = entry.get('type', '?')
+        url = entry.get('url', '')
+        history = entry.get('history', {})
+        latest_count = list(history.values())[-1] if history else 'Chưa có'
+        response += (
+            f"{i}. *{name}* ({fb_type})\n"
+            f"   👥 Members/Likes: {latest_count}\n"
+            f"   🔗 {url}\n"
+            f"──────────────\n"
+        )
+    response += f"\n_Tổng: {len(fb_data)} mục_"
+    bot.send_message(message.chat.id, response, parse_mode="Markdown", disable_web_page_preview=True)
+
 def scheduler_thread():
     """Runs the schedule loop in a separate thread."""
     # Check for new games twice daily: morning + evening
@@ -1326,6 +1382,9 @@ def scheduler_thread():
     schedule.every().day.at("19:00").do(afkmobi_quick_check)
     # AFKMobi: Milestone alerts daily at 07:00
     schedule.every().day.at("07:00").do(check_afk_milestones)
+    # Facebook Apify: scan daily at 10:00 and 20:00
+    schedule.every().day.at("10:00").do(fb_apify_scan)
+    schedule.every().day.at("20:00").do(fb_apify_scan)
     # Reload databases from disk every hour
     schedule.every(1).hours.do(load_database)
     schedule.every(1).hours.do(load_afkmobi_database)
@@ -1364,6 +1423,8 @@ def main():
         types.BotCommand("fullscrape", "🔃 Scrape toàn bộ (merge)"),
         types.BotCommand("stats", "📈 Thống kê database"),
         types.BotCommand("scrape", "🔄 Quick check game mới"),
+        types.BotCommand("fb_scan", "🔍 Quét Facebook (Trinh sát)"),
+        types.BotCommand("fb_list", "📋 DS theo dõi Facebook"),
         types.BotCommand("status", "✅ Kiểm tra bot"),
     ])
     logging.info("Bot command menu registered.")
