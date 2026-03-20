@@ -1,36 +1,46 @@
-from selenium import webdriver
-from selenium.webdriver.chrome.service import Service
-from selenium.webdriver.chrome.options import Options
-from webdriver_manager.chrome import ChromeDriverManager
-from selenium.webdriver.common.by import By
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
+"""
+Game License Scraper — API version (NO Selenium/Chrome needed)
+Uses the official API at gpttdt-api.abei.gov.vn
+
+Usage:
+  python scraper_full.py --quick    # Quick check page 1 only (~2 seconds)
+  python scraper_full.py            # Full scrape all pages (~10 seconds)
+"""
+
 import json
 import os
-import time
 import logging
 import re
+import shutil
+import glob
 
 from datetime import datetime as dt
-import glob
-import shutil
+import requests
 
 # Setup logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
+# === Config ===
+API_BASE = "https://gpttdt-api.abei.gov.vn/services/mcrlmtp/api/license"
+PAGE_SIZE = 24  # Same as the website's page size
 BACKUP_DIR = "backups"
 MAX_BACKUPS = 5
+DATA_FILE = "data.json"
+
+FILTER_MODEL = {
+    "platformCategoryCode": {"type": "equals", "filterType": "text", "filter": "QD_GAME_G1"},
+    "ftsValue": {"type": "contains", "filter": "", "filterType": "text"}
+}
 
 def backup_data():
-    """Creates a timestamped backup of data.json before any write operation.
-    Keeps only the latest MAX_BACKUPS files."""
-    if not os.path.exists("data.json"):
+    """Creates a timestamped backup of data.json before any write operation."""
+    if not os.path.exists(DATA_FILE):
         return None
     
     os.makedirs(BACKUP_DIR, exist_ok=True)
     timestamp = dt.now().strftime("%Y%m%d_%H%M%S")
     backup_path = os.path.join(BACKUP_DIR, f"data_backup_{timestamp}.json")
-    shutil.copy2("data.json", backup_path)
+    shutil.copy2(DATA_FILE, backup_path)
     logging.info(f"Backup created: {backup_path}")
     
     # Cleanup old backups
@@ -42,18 +52,75 @@ def backup_data():
     
     return backup_path
 
+
+def api_get_count():
+    """Get total number of G1 game licenses."""
+    r = requests.post(f"{API_BASE}/pivotCount", json={"filterModel": FILTER_MODEL}, timeout=15)
+    r.raise_for_status()
+    return r.json().get("data", 0)
+
+
+def api_get_page(start_row, end_row):
+    """Fetch a page of game licenses from the API."""
+    payload = {
+        "startRow": start_row,
+        "endRow": end_row,
+        "sortModel": [{"sort": "desc", "colId": "validFrom"}],
+        "filterModel": FILTER_MODEL
+    }
+    r = requests.post(f"{API_BASE}/pivotPaging", json=payload, timeout=15)
+    r.raise_for_status()
+    resp = r.json()
+    return resp.get("data", {}).get("data", [])
+
+
+def parse_api_item(item):
+    """Convert API response item to our data.json format."""
+    detail = item.get("licenseDetail", {})
+    
+    # Parse date from ISO format
+    valid_from = item.get("validFrom", "")
+    date_str = ""
+    if valid_from:
+        try:
+            parsed = dt.fromisoformat(valid_from.replace("+00:00", "+00:00").split("T")[0])
+            date_str = parsed.strftime("%d/%m/%Y")
+        except (ValueError, AttributeError):
+            date_str = ""
+    
+    # Map status
+    cstatus = item.get("cstatus", "")
+    status_map = {"valid": "Đang hoạt động", "revoked": "Đã thu hồi", "expired": "Hết hạn"}
+    status = status_map.get(cstatus, cstatus)
+    
+    # Build domain from homepage + website
+    domains = []
+    if detail.get("gameHomepage"):
+        domains.append(detail["gameHomepage"])
+    if detail.get("website") and detail["website"] not in domains:
+        domains.append(detail["website"])
+    domain = ", ".join(domains)
+    
+    return {
+        "id": str(item.get("id", "")),
+        "name": detail.get("gameNameVietnam", ""),
+        "company": item.get("companyName", ""),
+        "license": item.get("licenseNumber", ""),
+        "domain": domain,
+        "status": status,
+        "date": date_str
+    }
+
+
 def merge_data(existing_data, new_data):
-    """Merges new scraped data with existing data without losing any games.
-    Uses game ID as the unique key. New data updates existing entries."""
+    """Merges new data with existing data without losing any games."""
     merged = {}
     
-    # First, add all existing data
     for g in existing_data:
         gid = g.get("id", "")
         if gid:
             merged[gid] = g
     
-    # Then merge new data (update existing, add new)
     added = 0
     updated = 0
     for g in new_data:
@@ -61,16 +128,10 @@ def merge_data(existing_data, new_data):
         if not gid:
             continue
         if gid in merged:
-            # Update only if new data has more info (e.g. has date)
             old = merged[gid]
             if g.get("date") and not old.get("date"):
                 merged[gid] = g
                 updated += 1
-            elif g.get("date") and old.get("date"):
-                # Keep the existing one (already has date)
-                pass
-            elif not old.get("date") and not g.get("date"):
-                pass
         else:
             merged[gid] = g
             added += 1
@@ -79,275 +140,47 @@ def merge_data(existing_data, new_data):
     logging.info(f"Merge complete: {added} new, {updated} updated, {len(result)} total")
     return result
 
-def cleanup_zombie_chrome():
-    """Kill only zombie/defunct Chrome processes. Safe: zombies are already dead."""
-    if os.name == 'nt':
-        return  # Windows doesn't have zombie processes the same way
-    try:
-        import subprocess as sp
-        # Find zombie Chrome processes (state Z = zombie/defunct)
-        result = sp.run(
-            ["bash", "-c", "ps aux | grep '[c]hrome' | awk '$8 ~ /Z/ {print $2}'"],
-            capture_output=True, text=True, timeout=5
-        )
-        zombie_pids = result.stdout.strip().split('\n')
-        zombie_pids = [p for p in zombie_pids if p.strip()]
-        if zombie_pids:
-            for pid in zombie_pids:
-                try:
-                    os.kill(int(pid), 9)
-                except (ProcessLookupError, ValueError):
-                    pass
-            logging.info(f"Cleaned up {len(zombie_pids)} zombie Chrome processes.")
-    except Exception as e:
-        logging.warning(f"Zombie cleanup skipped: {e}")
-
-def create_driver():
-    """Creates a new Chrome driver instance."""
-    # Clean up any zombie Chrome processes from previous failed runs
-    cleanup_zombie_chrome()
-    chrome_options = Options()
-    chrome_options.add_argument("--headless")
-    chrome_options.add_argument("--disable-gpu")
-    chrome_options.add_argument("--no-sandbox")
-    chrome_options.add_argument("--disable-dev-shm-usage")
-    chrome_options.add_argument("--log-level=3")
-    
-    # Check for Chromium in common Linux paths if on Linux
-    if os.name != 'nt':
-        linux_chrome_paths = [
-            "/usr/bin/chromium-browser",
-            "/usr/bin/chromium",
-            "/snap/bin/chromium",
-            "/usr/bin/google-chrome"
-        ]
-        for path in linux_chrome_paths:
-            if os.path.exists(path):
-                chrome_options.binary_location = path
-                logging.info(f"Using Chrome binary at: {path}")
-                break
-
-    try:
-        # Try using webdriver_manager first
-        chrome_install = ChromeDriverManager().install()
-        # On Windows, it might need .exe, but wdm usually handles it. 
-        # The original code was forcing .exe, which we'll only do on Windows if it's missing.
-        if os.name == 'nt' and not chrome_install.lower().endswith(".exe"):
-            folder_name = os.path.dirname(chrome_install)
-            chromedriver_path = os.path.join(folder_name, "chromedriver.exe")
-        else:
-            chromedriver_path = chrome_install
-            
-        service = Service(chromedriver_path)
-    except Exception as e:
-        logging.warning(f"WebDriverManager failed: {e}. Falling back to system chromedriver.")
-        # Fallback for Linux: use absolute path
-        if os.name != 'nt' and os.path.exists("/usr/bin/chromedriver"):
-            service = Service("/usr/bin/chromedriver")
-        elif os.name != 'nt':
-            service = Service("chromedriver")
-        else:
-            raise e
-
-    driver = webdriver.Chrome(service=service, options=chrome_options)
-    driver.set_page_load_timeout(30)
-    return driver
-
-def phase1_collect_links(driver):
-    """Phase 1: Collect all card links and basic info from listing pages."""
-    url = "https://giayphep.abei.gov.vn/g1"
-    logging.info(f"Phase 1: Collecting links from {url}...")
-    driver.get(url)
-    
-    wait = WebDriverWait(driver, 10)
-    wait.until(EC.presence_of_element_located((By.CSS_SELECTOR, ".ant-card-body")))
-    time.sleep(3)
-    
-    all_items = []
-    page_num = 1
-    
-    while True:
-        logging.info(f"Phase 1 - Page {page_num}...")
-        
-        # Find all cards
-        cards = driver.find_elements(By.CSS_SELECTOR, ".ant-card")
-        
-        for card in cards:
-            try:
-                # Get ID from parent <a> tag
-                parent = driver.execute_script("return arguments[0].parentNode;", card)
-                href = parent.get_attribute("href") or ""
-                
-                text = card.text.split('\n')
-                
-                game_id = ""
-                if "/g1/" in href:
-                    game_id = href.split("/g1/")[-1].split("?")[0]
-                
-                if len(text) >= 4:
-                    item = {
-                        "id": game_id,
-                        "name": text[0],
-                        "company": text[2] if len(text) > 2 else "",
-                        "license": text[3] if len(text) > 3 else "",
-                        "domain": text[4] if len(text) > 4 else "",
-                        "status": text[5] if len(text) > 5 else "",
-                        "date": ""
-                    }
-                    all_items.append(item)
-            except Exception as e:
-                pass
-        
-        # Navigate to next page
-        try:
-            driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
-            time.sleep(1)
-            
-            next_btn = driver.find_element(By.CSS_SELECTOR, "li.ant-pagination-next")
-            if "ant-pagination-disabled" in next_btn.get_attribute("class"):
-                logging.info("Phase 1: Reached last page.")
-                break
-            
-            driver.execute_script("arguments[0].click();", next_btn)
-            page_num += 1
-            time.sleep(3)
-            
-        except Exception as e:
-            logging.error(f"Phase 1 navigation error: {e}")
-            break
-    
-    logging.info(f"Phase 1 complete. Collected {len(all_items)} items.")
-    return all_items
-
-def phase2_collect_dates(driver, items):
-    """Phase 2: Visit each detail page to get the date. Stop when year < 2025."""
-    logging.info(f"Phase 2: Collecting dates for {len(items)} items (Target: 2025+)...")
-    
-    items_with_id = [item for item in items if item.get("id")]
-    final_items = []
-    
-    for i, item in enumerate(items_with_id):
-        try:
-            detail_url = f"https://giayphep.abei.gov.vn/g1/{item['id']}"
-            driver.get(detail_url)
-            time.sleep(2)
-            
-            body_text = driver.find_element(By.TAG_NAME, "body").text
-            
-            # Look for date pattern (DD/MM/YYYY)
-            date_match = re.search(r'(\d{2}/\d{2}/\d{4})', body_text)
-            if date_match:
-                date_str = date_match.group(1)
-                item["date"] = date_str
-                
-                # Check year
-                year = int(date_str.split("/")[-1])
-                if year < 2025:
-                    logging.info(f"Phase 2: Reached year {year} for ID {item['id']}. Skipping, but continuing search.")
-                    continue # IMPORTANT: Changed from break to continue to avoid stopping the whole process on unordered dates
-            
-            final_items.append(item)
-            
-            if (i + 1) % 10 == 0:
-                logging.info(f"Phase 2: Processed {i + 1} items...")
-                # Intermediate save
-                with open("data.json", "w", encoding="utf-8") as f:
-                    json.dump(final_items, f, indent=2, ensure_ascii=False)
-                    
-        except Exception as e:
-            logging.error(f"Phase 2 error for ID {item['id']}: {e}")
-            continue
-    
-    logging.info(f"Phase 2 complete. Collected {len(final_items)} items from 2025+.")
-    return final_items
 
 def quick_check():
-    """Quick check: only scan page 1 for new games, compare with existing data.
+    """Quick check: fetch page 1 from API, compare with existing data.
     
-    Much faster than scrape_all() (~30s vs ~18min).
+    Much faster than Selenium (~2 seconds vs ~2+ minutes).
     Returns (new_games_count, total_count) tuple.
     """
-    # Load existing data to find the latest known game ID
     existing_data = []
     known_ids = set()
-    if os.path.exists("data.json"):
+    if os.path.exists(DATA_FILE):
         try:
-            with open("data.json", "r", encoding="utf-8") as f:
+            with open(DATA_FILE, "r", encoding="utf-8") as f:
                 existing_data = json.load(f)
                 known_ids = {g.get("id") for g in existing_data if g.get("id")}
         except Exception as e:
-            logging.error(f"Quick check: Error loading data.json: {e}")
+            logging.error(f"Quick check: Error loading {DATA_FILE}: {e}")
             return 0, len(existing_data)
     
-    latest_id = existing_data[0].get("id") if existing_data else None
-    logging.info(f"Quick check: Latest known ID = {latest_id}, {len(known_ids)} known games.")
-    
-    driver = create_driver()
-    new_items = []
+    logging.info(f"Quick check: {len(known_ids)} known games. Fetching page 1 from API...")
     
     try:
-        url = "https://giayphep.abei.gov.vn/g1"
-        driver.get(url)
+        items = api_get_page(0, PAGE_SIZE)
+        logging.info(f"Quick check: API returned {len(items)} items.")
         
-        wait = WebDriverWait(driver, 10)
-        wait.until(EC.presence_of_element_located((By.CSS_SELECTOR, ".ant-card-body")))
-        time.sleep(3)
-        
-        # Only check page 1
-        cards = driver.find_elements(By.CSS_SELECTOR, ".ant-card")
-        logging.info(f"Quick check: Found {len(cards)} cards on page 1.")
-        
-        for card in cards:
-            try:
-                parent = driver.execute_script("return arguments[0].parentNode;", card)
-                href = parent.get_attribute("href") or ""
-                text = card.text.split('\n')
-                
-                game_id = ""
-                if "/g1/" in href:
-                    game_id = href.split("/g1/")[-1].split("?")[0]
-                
-                # Stop if we hit a known game ID
-                if game_id and game_id in known_ids:
-                    logging.info(f"Quick check: Hit known game ID {game_id}. Stopping.")
-                    break
-                
-                if len(text) >= 4 and game_id:
-                    item = {
-                        "id": game_id,
-                        "name": text[0],
-                        "company": text[2] if len(text) > 2 else "",
-                        "license": text[3] if len(text) > 3 else "",
-                        "domain": text[4] if len(text) > 4 else "",
-                        "status": text[5] if len(text) > 5 else "",
-                        "date": ""
-                    }
-                    new_items.append(item)
-            except Exception:
-                pass
+        new_items = []
+        for item in items:
+            game = parse_api_item(item)
+            if game["id"] and game["id"] not in known_ids:
+                new_items.append(game)
+            elif game["id"] in known_ids:
+                # Hit a known game, all subsequent are also known
+                break
         
         if not new_items:
             logging.info("Quick check: No new games found.")
             return 0, len(existing_data)
         
-        # Get dates for new items only
-        logging.info(f"Quick check: Found {len(new_items)} new games! Getting dates...")
-        for item in new_items:
-            try:
-                detail_url = f"https://giayphep.abei.gov.vn/g1/{item['id']}"
-                driver.get(detail_url)
-                time.sleep(2)
-                body_text = driver.find_element(By.TAG_NAME, "body").text
-                date_match = re.search(r'(\d{2}/\d{2}/\d{4})', body_text)
-                if date_match:
-                    item["date"] = date_match.group(1)
-            except Exception as e:
-                logging.error(f"Quick check: Error getting date for {item['id']}: {e}")
-        
         # Prepend new games to existing data
         updated_data = new_items + existing_data
         
-        # Dedup (safety)
+        # Dedup
         seen_ids = set()
         unique_data = []
         for g in updated_data:
@@ -358,7 +191,7 @@ def quick_check():
             elif not gid:
                 unique_data.append(g)
         
-        with open("data.json", "w", encoding="utf-8") as f:
+        with open(DATA_FILE, "w", encoding="utf-8") as f:
             json.dump(unique_data, f, indent=2, ensure_ascii=False)
         
         logging.info(f"Quick check: Added {len(new_items)} new games. Total: {len(unique_data)}")
@@ -367,54 +200,45 @@ def quick_check():
     except Exception as e:
         logging.error(f"Quick check error: {e}")
         return 0, len(existing_data)
-    finally:
-        driver.quit()
 
 
 def scrape_all():
-    """Full scrape: re-crawl all pages. MERGES with existing data (never overwrites)."""
-    # Backup before doing anything
+    """Full scrape: fetch all pages from API. MERGES with existing data."""
     backup_data()
     
-    # Load existing data for merge
     existing_data = []
-    if os.path.exists("data.json"):
+    if os.path.exists(DATA_FILE):
         try:
-            with open("data.json", "r", encoding="utf-8") as f:
+            with open(DATA_FILE, "r", encoding="utf-8") as f:
                 existing_data = json.load(f)
             logging.info(f"Loaded {len(existing_data)} existing games for merge.")
         except Exception as e:
             logging.error(f"Error loading existing data: {e}")
     
-    driver = create_driver()
-    
     try:
-        # Phase 1: Collect all links
-        all_items = phase1_collect_links(driver)
+        total = api_get_count()
+        logging.info(f"API reports {total} total G1 licenses.")
         
-        # Save temporary list
-        with open("data_temp.json", "w", encoding="utf-8") as f:
-            json.dump(all_items, f, indent=2, ensure_ascii=False)
-            
-        # Phase 2: Deep scrape for dates (2025+)
-        final_items = phase2_collect_dates(driver, all_items)
+        all_items = []
+        for start in range(0, total, PAGE_SIZE):
+            end = min(start + PAGE_SIZE, total)
+            items = api_get_page(start, end)
+            for item in items:
+                game = parse_api_item(item)
+                if game.get("name"):
+                    all_items.append(game)
+            logging.info(f"Fetched {len(all_items)}/{total} items...")
         
-        # Deduplicate scraped items
+        # Dedup scraped items
         seen_ids = set()
         unique_items = []
-        for item in final_items:
-            game_id = item.get("id", "")
-            if game_id and game_id not in seen_ids:
-                seen_ids.add(game_id)
-                unique_items.append(item)
-            elif not game_id:
+        for item in all_items:
+            gid = item.get("id", "")
+            if gid and gid not in seen_ids:
+                seen_ids.add(gid)
                 unique_items.append(item)
         
-        removed = len(final_items) - len(unique_items)
-        if removed > 0:
-            logging.info(f"Dedup: removed {removed} duplicate entries.")
-        
-        # MERGE with existing data instead of overwriting
+        # Merge with existing
         merged = merge_data(existing_data, unique_items)
         
         # Sort by date (newest first)
@@ -425,15 +249,12 @@ def scrape_all():
                 return dt.min
         merged.sort(key=parse_date, reverse=True)
         
-        # Save final
-        with open("data.json", "w", encoding="utf-8") as f:
+        with open(DATA_FILE, "w", encoding="utf-8") as f:
             json.dump(merged, f, indent=2, ensure_ascii=False)
-        logging.info(f"Final results saved to data.json ({len(merged)} unique items, was {len(existing_data)})")
+        logging.info(f"Final: {len(merged)} unique items saved (was {len(existing_data)})")
         
     except Exception as e:
-        logging.error(f"Error: {e}")
-    finally:
-        driver.quit()
+        logging.error(f"Full scrape error: {e}")
 
 
 if __name__ == "__main__":
@@ -443,4 +264,3 @@ if __name__ == "__main__":
         print(f"New: {new_count}, Total: {total}")
     else:
         scrape_all()
-
