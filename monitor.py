@@ -37,7 +37,18 @@ root_logger.addHandler(stream_handler)
 # --- SINGLE INSTANCE LOCK ---
 import os
 import sys
+import atexit
 lock_file_path = "alert_gov.lock"
+
+def cleanup_lock():
+    """Remove lock file on exit so PM2 can restart the bot."""
+    try:
+        lock_file_fd.close()
+        if os.path.exists(lock_file_path):
+            os.remove(lock_file_path)
+            logging.info("Lock file cleaned up.")
+    except Exception:
+        pass
 
 # Cross-platform file locking
 if os.name == 'nt':
@@ -56,6 +67,8 @@ else:
     except IOError:
         logging.error("Another instance of monitor.py is already running. Exiting...")
         sys.exit(1)
+
+atexit.register(cleanup_lock)
 # ----------------------------
 
 # Load environment variables
@@ -1469,6 +1482,23 @@ def main():
         bot.infinity_polling()
     except Exception as e:
         logging.error(f"Bot polling crashed: {e}")
+    finally:
+        # Send crash alert via direct API call (bot object may be dead)
+        try:
+            crash_msg = (
+                "🚨 *BOT ALERT GOV ĐÃ SẬP!*\n\n"
+                f"⏰ Thời gian: {datetime.now().strftime('%d/%m/%Y %H:%M:%S')}\n"
+                f"❌ Lỗi: `{e if 'e' in dir() else 'Unknown'}`\n\n"
+                "🔄 PM2 sẽ tự khởi động lại bot..."
+            )
+            requests.post(
+                f"https://api.telegram.org/bot{BOT_TOKEN}/sendMessage",
+                json={"chat_id": CHAT_ID, "text": crash_msg, "parse_mode": "Markdown"},
+                timeout=10
+            )
+            logging.info("Crash alert sent to Telegram.")
+        except Exception as alert_err:
+            logging.error(f"Failed to send crash alert: {alert_err}")
 
 if __name__ == "__main__":
     main()
