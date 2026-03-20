@@ -821,11 +821,30 @@ def daily_scrape():
         logging.info(f"Quick check attempt {attempt}/{max_retries}...")
         try:
             old_count = len(game_database)
-            result = subprocess.run(
+            # Use Popen with process group so we can kill Chrome children on timeout
+            proc = subprocess.Popen(
                 [sys.executable, "scraper_full.py", "--quick"],
-                check=True, timeout=120, capture_output=True, text=True
+                stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True,
+                preexec_fn=os.setsid if os.name != 'nt' else None
             )
-            logging.info(f"Quick check output: {result.stdout.strip()}")
+            try:
+                stdout, stderr = proc.communicate(timeout=120)
+                if proc.returncode != 0:
+                    raise subprocess.CalledProcessError(proc.returncode, "scraper_full.py", stdout, stderr)
+            except subprocess.TimeoutExpired:
+                # Kill entire process group (includes Chrome children)
+                if os.name != 'nt':
+                    import signal
+                    try:
+                        os.killpg(os.getpgid(proc.pid), signal.SIGKILL)
+                    except ProcessLookupError:
+                        pass
+                else:
+                    proc.kill()
+                proc.wait()
+                raise
+            result_output = stdout.strip() if stdout else ""
+            logging.info(f"Quick check output: {result_output}")
             load_database()
             new_count = len(game_database)
             diff = new_count - old_count

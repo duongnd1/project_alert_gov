@@ -79,8 +79,33 @@ def merge_data(existing_data, new_data):
     logging.info(f"Merge complete: {added} new, {updated} updated, {len(result)} total")
     return result
 
+def cleanup_zombie_chrome():
+    """Kill only zombie/defunct Chrome processes. Safe: zombies are already dead."""
+    if os.name == 'nt':
+        return  # Windows doesn't have zombie processes the same way
+    try:
+        import subprocess as sp
+        # Find zombie Chrome processes (state Z = zombie/defunct)
+        result = sp.run(
+            ["bash", "-c", "ps aux | grep '[c]hrome' | awk '$8 ~ /Z/ {print $2}'"],
+            capture_output=True, text=True, timeout=5
+        )
+        zombie_pids = result.stdout.strip().split('\n')
+        zombie_pids = [p for p in zombie_pids if p.strip()]
+        if zombie_pids:
+            for pid in zombie_pids:
+                try:
+                    os.kill(int(pid), 9)
+                except (ProcessLookupError, ValueError):
+                    pass
+            logging.info(f"Cleaned up {len(zombie_pids)} zombie Chrome processes.")
+    except Exception as e:
+        logging.warning(f"Zombie cleanup skipped: {e}")
+
 def create_driver():
     """Creates a new Chrome driver instance."""
+    # Clean up any zombie Chrome processes from previous failed runs
+    cleanup_zombie_chrome()
     chrome_options = Options()
     chrome_options.add_argument("--headless")
     chrome_options.add_argument("--disable-gpu")
