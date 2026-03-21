@@ -1404,6 +1404,85 @@ def fb_list_handle(message):
     response += f"\n_Tổng: {len(fb_data)} mục_"
     bot.send_message(message.chat.id, response, parse_mode="Markdown", disable_web_page_preview=True)
 
+@bot.message_handler(commands=['fb_add'])
+def fb_add_handle(message):
+    """Add a Facebook page to watch list. Format: /fb_add Game Name | URL"""
+    text = message.text.replace("/fb_add", "", 1).strip()
+    if "|" not in text:
+        bot.reply_to(message,
+            "📝 *Cách dùng:*\n"
+            "`/fb_add Tên Game | https://facebook.com/page`\n\n"
+            "Ví dụ:\n"
+            "`/fb_add Võ Lâm Truyền Kỳ | https://facebook.com/volam`",
+            parse_mode="Markdown")
+        return
+    
+    parts = text.split("|", 1)
+    game_name = parts[0].strip()
+    url = parts[1].strip()
+    
+    if not url.startswith("http"):
+        url = "https://www.facebook.com/" + url
+    
+    # Load existing
+    fb_data = []
+    if os.path.exists("fb_watch_list.json"):
+        with open("fb_watch_list.json", 'r', encoding='utf-8') as f:
+            fb_data = json.load(f)
+    
+    # Check duplicate
+    for entry in fb_data:
+        if entry.get("url", "").rstrip("/") == url.rstrip("/"):
+            bot.reply_to(message, f"⚠️ URL này đã có trong danh sách: *{entry.get('game_name')}*", parse_mode="Markdown")
+            return
+    
+    fb_data.append({
+        "game_name": game_name,
+        "url": url,
+        "type": "Fanpage",
+        "history": {}
+    })
+    
+    with open("fb_watch_list.json", 'w', encoding='utf-8') as f:
+        json.dump(fb_data, f, indent=2, ensure_ascii=False)
+    
+    bot.reply_to(message,
+        f"✅ Đã thêm vào danh sách trinh sát:\n"
+        f"🎮 *{game_name}*\n🔗 {url}\n\n"
+        f"📊 Tổng: {len(fb_data)} mục. Dùng /fb\\_scan để quét ngay.",
+        parse_mode="Markdown")
+
+@bot.message_handler(commands=['fb_remove'])
+def fb_remove_handle(message):
+    """Remove a Facebook page by index. Format: /fb_remove 1"""
+    text = message.text.replace("/fb_remove", "", 1).strip()
+    
+    fb_data = []
+    if os.path.exists("fb_watch_list.json"):
+        with open("fb_watch_list.json", 'r', encoding='utf-8') as f:
+            fb_data = json.load(f)
+    
+    if not text:
+        bot.reply_to(message, "📝 Dùng `/fb_remove <số>` (xem số thứ tự bằng /fb\\_list)", parse_mode="Markdown")
+        return
+    
+    try:
+        idx = int(text) - 1
+        if idx < 0 or idx >= len(fb_data):
+            bot.reply_to(message, f"❌ Số không hợp lệ. Chọn từ 1 đến {len(fb_data)}.")
+            return
+        
+        removed = fb_data.pop(idx)
+        with open("fb_watch_list.json", 'w', encoding='utf-8') as f:
+            json.dump(fb_data, f, indent=2, ensure_ascii=False)
+        
+        bot.reply_to(message,
+            f"🗑 Đã xóa: *{removed.get('game_name', '?')}*\n"
+            f"📊 Còn lại: {len(fb_data)} mục.",
+            parse_mode="Markdown")
+    except ValueError:
+        bot.reply_to(message, "❌ Vui lòng nhập số. Ví dụ: `/fb_remove 1`", parse_mode="Markdown")
+
 def scheduler_thread():
     """Runs the schedule loop in a separate thread."""
     # Check for new games twice daily: morning + evening
@@ -1456,6 +1535,8 @@ def main():
         types.BotCommand("scrape", "🔄 Quick check game mới"),
         types.BotCommand("fb_scan", "🔍 Quét Facebook (Trinh sát)"),
         types.BotCommand("fb_list", "📋 DS theo dõi Facebook"),
+        types.BotCommand("fb_add", "➕ Thêm FB theo dõi"),
+        types.BotCommand("fb_remove", "➖ Xóa FB theo dõi"),
         types.BotCommand("status", "✅ Kiểm tra bot"),
     ])
     logging.info("Bot command menu registered.")
