@@ -19,6 +19,7 @@ ACTOR_ID = os.getenv("APIFY_FB_ACTOR", "apify/facebook-pages-scraper")
 WATCH_FILE = "fb_watch_list.json"
 SPIKE_THRESHOLD_PERCENT = 0.05 # Tăng trưởng 5%
 SPIKE_THRESHOLD_COUNT = 500    # Tăng tối thiểu 500 thành viên
+SPIKE_MIN_LIKES = 1000         # Chỉ cảnh báo khi likes >= 1000
 
 # Biến Telegram
 BOT_TOKEN = os.getenv("TELEGRAM_BOT_TOKEN")
@@ -78,7 +79,8 @@ def check_spike(entry, new_count):
         percent = diff / last_count
         
         # Chỉ cảnh báo nếu hôm nay chưa lưu số mới và tăng trưởng đạt ngưỡng
-        if today_str not in dates and (diff >= SPIKE_THRESHOLD_COUNT or percent >= SPIKE_THRESHOLD_PERCENT):
+        # Chỉ cảnh báo nếu: hôm nay chưa lưu, likes >= ngưỡng tối thiểu, và tăng trưởng đạt ngưỡng
+        if today_str not in dates and new_count >= SPIKE_MIN_LIKES and (diff >= SPIKE_THRESHOLD_COUNT or percent >= SPIKE_THRESHOLD_PERCENT):
             msg = (f"🚨 <b>TRINH SÁT BÁO ĐỘNG</b>\n\n"
                    f"🎮 Game: <b>{entry.get('game_name', 'Không rõ')}</b>\n"
                    f"📈 Tín hiệu: Số lượng thành viên của {entry.get('type', 'Page/Group')} tăng đột biến!\n"
