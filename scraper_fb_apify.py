@@ -60,15 +60,17 @@ def save_watch_list(data):
         json.dump(data, f, indent=2, ensure_ascii=False)
 
 def check_spike(entry, new_count):
+    """Check for spike and return alert snippet if triggered, or None."""
     history = entry.setdefault("history", {})
     today_str = date.today().isoformat()
     
     dates = sorted(history.keys())
+    alert_snippet = None
     
     # Bỏ qua nếu chưa có dữ liệu ngày hôm trước
     if not dates:
         history[today_str] = new_count
-        return
+        return None
         
     # Tính từ ngày ghi nhận gần nhất
     last_date = dates[-1]
@@ -78,21 +80,20 @@ def check_spike(entry, new_count):
         diff = new_count - last_count
         percent = diff / last_count
         
-        # Chỉ cảnh báo nếu hôm nay chưa lưu số mới và tăng trưởng đạt ngưỡng
         # Chỉ cảnh báo nếu: hôm nay chưa lưu, likes >= ngưỡng tối thiểu, và tăng trưởng đạt ngưỡng
         if today_str not in dates and new_count >= SPIKE_MIN_LIKES and (diff >= SPIKE_THRESHOLD_COUNT or percent >= SPIKE_THRESHOLD_PERCENT):
-            msg = (f"🚨 <b>TRINH SÁT BÁO ĐỘNG</b>\n\n"
-                   f"🎮 Game: <b>{entry.get('game_name', 'Không rõ')}</b>\n"
-                   f"📈 Tín hiệu: Số lượng thành viên của {entry.get('type', 'Page/Group')} tăng đột biến!\n"
-                   f"🔥 Mức tăng: <b>+{diff}</b> (tương đương <b>+{(percent*100):.1f}%</b>) so với {last_date}.\n"
-                   f"👉 Dấu hiệu cho thấy game chuẩn bị Alpha Test hoặc đang chạy Ads cực mạnh!\n\n"
-                   f"🔗 Link: {entry.get('url')}")
-                   
+            alert_snippet = (
+                f"🎮 Game: <b>{entry.get('game_name', 'Không rõ')}</b>\n"
+                f"📈 {entry.get('type', 'Fanpage')} tăng đột biến!\n"
+                f"🔥 Mức tăng: <b>+{diff}</b> (<b>+{(percent*100):.1f}%</b>) so với {last_date}\n"
+                f"👥 Hiện tại: <b>{new_count:,}</b> likes\n"
+                f"🔗 {entry.get('url')}"
+            )
             logging.info(f"Phát hiện tăng đột biến cho {entry.get('game_name')}")
-            send_telegram_alert(msg)
 
     # Cập nhật số liệu hôm nay
     history[today_str] = new_count
+    return alert_snippet
 
 def run_scraper():
     watch_list = load_watch_list()
@@ -111,6 +112,7 @@ def run_scraper():
         logging.info(f"Apify call completed. Status: {run.get('status')}")
         
         # Duyệt qua các kết quả Apify trả về
+        alerts = []
         for item in client.dataset(run["defaultDatasetId"]).iterate_items():
             # URL tùy vào cấu trúc trả về của mỗi Apify Actor
             res_url = item.get("pageUrl") or item.get("url") or item.get("facebookUrl")
@@ -125,10 +127,26 @@ def run_scraper():
             for entry in watch_list:
                 # Do URL khi nhập và xử lý có thể rút gọn/chứa param nên ta check chuỗi con
                 if entry["url"].strip("/") in res_url:
-                    check_spike(entry, int(likes))
+                    snippet = check_spike(entry, int(likes))
+                    if snippet:
+                        alerts.append(snippet)
                     break
 
         save_watch_list(watch_list)
+        
+        # Gộp tất cả cảnh báo thành 1 tin nhắn duy nhất
+        if alerts:
+            combined = (
+                f"🚨 <b>TRINH SÁT BÁO ĐỘNG</b>\n"
+                f"━━━━━━━━━━━━━━━━━━━━\n\n"
+            )
+            combined += "\n━━━━━━━━━━━━━━━━━━━━\n\n".join(alerts)
+            combined += (
+                f"\n\n━━━━━━━━━━━━━━━━━━━━\n"
+                f"👉 Dấu hiệu game chuẩn bị Alpha Test hoặc đang chạy Ads mạnh!"
+            )
+            send_telegram_alert(combined)
+            logging.info(f"Đã gửi {len(alerts)} cảnh báo gộp trong 1 tin nhắn.")
         logging.info(f"Hoàn tất quét Facebook qua Apify lúc {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
         
     except Exception as e:
